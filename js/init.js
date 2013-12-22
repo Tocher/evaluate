@@ -5,7 +5,7 @@ $(document).ready(function() {
 	$("#left_column").css("min-height",$(window).height() - $("header").height() - $("footer").height() - 2);
 
 	$("#right_column").css("width",$("#main").width()-270-20);
-
+	
 	$(window).resize(function() {
 		$("#right_column").css("min-height",$(window).height() - $("header").height() - $("footer").height() - $("#right_column").css("border-top-width").substr(0,$("#right_column").css("border-top-width").length-2));
 		$("#left_column").css("min-height",$(window).height() - $("header").height() - $("footer").height() - 2);
