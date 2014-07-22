@@ -20,15 +20,32 @@
 		<div class="row">
 			<a href="#" class="logo">evaluate</a>
 			<div class="pull-right">
-				<div class="profile">
-					<div class="date">20 June, Tuesday 12:05 PM</div>
-					<div class="user"><span>Welcome</span> James <i class="fa fa-power-off"></i><span class="tooltip">Log off</span></div>
-				</div>
-				<img src="img/img_right.png">
+				<a class="registerbtn" href="#">Register</a>
+				<a class="signinbtn" href="#">Sign In <br> <span class="signin-little">	if you are already registered</span></a>
+				
 			</div>
 		</div>
 	</header>
-	<section id="main" class="row">
+	<section id="main-l">
+			<div id="shade"></div>
+				<div id="login-form"> 
+					<p id="login-headline">Free Sign Up</p>
+					<input id="form1" type="text" placeholder="Domain" name="Name">
+					<input id="form2" type="text" placeholder="Email" name="Email">
+					<input id="form2" type="password" placeholder="Password" name="Password">
+					<input id="form2" type="text" placeholder="Number" name="Number">					
+					<input id="form2" type="text" placeholder="Organisation name" name="Orgname">					
+					<input id="form3" type="text" placeholder="Choose sub domain" name="Subdomain">
+					<div id="restore-form">
+						<input id="rem-login" type="checkbox" name="rem" > <span style="font-size: 12px; color:#333333; position: relative; top: -2px;">I agree with term and conditions</span>
+					</div>
+					<a id="login-btn" href="#">Submit</a>
+					<div id="login-bottom">
+						<img src="img/mini-icon2.png" style="position:absolute; left:24%; bottom:30%;">
+						<p style="margin-top:2%;">*Your data will be secured with us</p>
+					</div>
+					
+				</div>	
 
 	</section>
 	<footer>
@@ -39,6 +56,7 @@
 
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 	<script src="http://code.jquery.com/ui/1.11.0/jquery-ui.js"></script>
-	<script type="text/javascript" src="js/init.js"></script>
+	<script type="text/javascript" src="js/private-login.js"></script>
+	
 </body>
 </html>
