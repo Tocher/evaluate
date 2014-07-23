@@ -588,4 +588,18 @@ $(document).ready(function() {
 		}
 	});
 
+
+
+
+///////////////////// Exam JS ///////////////////////////
+	$("#switch_to_create_exam").click(function() {
+		$("#view_exam_tab").hide();
+		$("#create_exam_tab").fadeIn();
+	});
+
+	$("#switch_to_view_exam").click(function() {
+		$("#create_exam_tab").hide();
+		$("#view_exam_tab").fadeIn();
+	});
+
 });

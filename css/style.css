@@ -224,6 +224,7 @@ table {
 	z-index: 9;
 	margin-left: -5px;
 	margin-top: -1px;
+	font-family: Raleway;
 }
 .column_head {
 	height: 63px;
@@ -286,6 +287,15 @@ table {
 }
 .block-subject, .block-section {
 	display: none;
+}
+.block-exam {
+	padding: 10px 15px;
+}
+.block-3 {
+	width:30%;
+}
+.block-6 {
+	width:59%;
 }
 /* fixing whitespaces */
 .block:not(:first-child) {
@@ -785,7 +795,11 @@ h2.section_header span {
 	font-family: Raleway;
 	margin-right: 20px;
 }
-.column_head_right span {
+.column_head_right span:hover {
+	cursor: pointer;
+	text-decoration: underline;
+}
+.column_head_right span.selected {
 	color:#da534f;
 }
 
@@ -797,4 +811,180 @@ h2.section_header span {
 	font-family: Raleway;
 	font-size: 14px;
 	font-weight: 500;	
+}
+#view_exam table {
+	width: 100%;
+	max-width: 100%;
+	border: 1px solid #e2e2e2;
+	background-color: transparent;
+	border-spacing: 0;
+	border-collapse: separate;
+	border-radius: 5px;
+	color:#757575;
+	font-family: Raleway;
+	font-size: 14px;
+}
+#view_exam table i {
+	font-size: 18px;
+}
+#view_exam table thead tr:first-child th:first-child,
+#view_exam table td:first-child {
+	text-align: center;
+}
+#view_exam table i.fa-circle-thin{
+	color:#636363;
+}
+#view_exam table i.fa-check-circle{
+	color: #47a746;
+}
+#view_exam table th {
+	text-align: left;
+	background: #f7f7f7;
+	padding:10px;
+}
+#view_exam table td {
+	background: #fff;
+	padding:5px 10px;
+}
+#view_exam .registerbtn {
+	 padding: 7px 13px;
+	 border-radius: 5px;
+	 margin-top:20px;
+	 margin-right: 0;
+	 cursor: pointer;
+}
+#view_exam tbody td:last-child:hover {
+	color: #d9524c;
+	cursor: pointer;
+}
+
+.table {
+	border-radius: 5px;
+	width: 100%;
+	color: #999999;
+	font-size: 13px;
+}
+.table td {
+	padding:10px;
+}
+.table-bordered {
+  border: 1px solid #e2e2e2;
+}
+.table-bordered > thead > tr > th,
+.table-bordered > tbody > tr > th,
+.table-bordered > tfoot > tr > th,
+.table-bordered > thead > tr > td,
+.table-bordered > tbody > tr > td,
+.table-bordered > tfoot > tr > td {
+  border-right: 1px solid #e2e2e2;
+  border-bottom: 1px solid #e2e2e2;
+}
+.table-bordered > thead > tr > th,
+.table-bordered > thead > tr > td {
+  border-bottom-width: 1px;
+}
+.table-bordered > thead > tr > td:last-child,
+.table-bordered > tbody > tr > td:last-child,
+.table-bordered > thead > tr > th:last-child,
+.table-bordered > tbody > tr > th:last-child {
+	border-right: none;
+}
+.table-bordered > tbody > tr:last-child > th,
+.table-bordered > tbody > tr:last-child > td {
+	border-bottom: none;
+}
+
+.selections > div:first-child {
+	border-top-left-radius: 5px;
+	border-bottom-left-radius: 5px;
+}
+.selections > div:last-child {
+	border-top-right-radius: 5px;
+	border-bottom-right-radius: 5px;
+	background: #555;
+	border-color: #555;
+	color: #fff;
+	font-size: 18px;
+	height: 35px;
+	line-height: 35px;
+	padding: 0px 15px;
+	vertical-align: middle;
+}
+.selections > div:not(:first-child) {
+	margin-left:-5px;
+}
+.selections > div:not(:last-child) {
+	width:200px;
+}
+.selections > div {
+	display: inline-block;
+	position: relative;
+	border:1px solid #e2e2e2;
+	background: #fff;
+	padding:10px 15px;
+	color: #757575;
+	font-size: 13px;
+	cursor: pointer;
+}
+.selections > div > span > i {
+	font-size: 18px;
+	position: absolute;
+	right: 10px;
+}
+.selections > div > ul {
+	display: none;
+	position: absolute;
+}
+#view_exam_tab {
+	display: none;
+}
+.create-exam {
+	padding: 7px 13px;
+	width: 100px;
+	margin-top:20px;
+	float: left;
+	margin-bottom: 30px;
+}
+.table-create-exam tr td:first-child {
+	width:45%;
+	padding-right: 0px;
+}
+.table-settings-exam tr td:first-child {
+	width:25%;
+	padding-right: 0px;
+}
+.exam-btn {
+	margin-top:20px;
+	border:1px solid #d24845;
+	background: #F85652;
+	background: linear-gradient(to bottom, #F85652, #EE514D);
+	color:#fff;
+	border-radius: 5px;
+	padding:10px 25px;
+	font-size: 18px;
+	text-shadow: 0.5px 0.5px 0 #000000;
+	font-weight: bold;
+	cursor: pointer;
+	display: inline-block;
+	float:left;
+}
+.exam-btn:hover {
+	background: #F85652;
+}
+.select {
+	color: #555;
+}
+.select {
+	position: relative;
+	cursor: pointer;
+}
+.select span i {
+	position: absolute;
+	right: 0px;
+	font-size: 18px;
+	line-height: 16px;
+}
+.select ul {
+	display: none;
+	position: absolute;
 }
