@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Evaluate</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<!--[if lt IE 9]>
+	    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	<!--[if lt IE 9]>
+	    <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+	<![endif]-->
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+	<link href='http://fonts.googleapis.com/css?family=PT+Sans' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Raleway:400,700,500' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="http://code.jquery.com/ui/1.11.0/themes/smoothness/jquery-ui.css">
+</head>
+<body>
+	<header>
+		<div class="row">
+			<a href="#" class="logo">evaluate</a>
+			<div class="pull-right">
+				<div class="profile">
+					<div class="date">20 June, Tuesday 12:05 PM</div>
+					<div class="user"><span>Welcome</span> James <i class="fa fa-power-off"></i><span class="tooltip">Log off</span></div>
+				</div>
+				<img src="img/img_right.png">
+			</div>
+		</div>
+	</header>
+	<section id="main" class="row">
+		<section id="left_column">
+			<table>
+				<tr data-tab="1">
+					<td><div class="icon_set is1"></div></td>
+					<td>Dashboard</td>
+				</tr>
+				<tr data-tab="2">
+					<td><div class="icon_set is2"></div></td>
+					<td>Course Manager</td>
+				</tr>
+				<tr data-tab="3">
+					<td><div class="icon_set is3"></div></td>
+					<td>Students</td>
+				</tr>
+				<tr data-tab="4">
+					<td><div class="icon_set is4"></div></td>
+					<td>Questions</td>
+				</tr>
+				<tr data-tab="5">
+					<td><div class="icon_set is5"></div></td>
+					<td>Exam Manager</td>
+				</tr>
+				<tr data-tab="6">
+					<td><div class="icon_set is6"></div></td>
+					<td>Reports</td>
+				</tr>
+				<tr data-tab="7">
+					<td><div class="icon_set is9"></div></td>
+					<td>Credits</td>
+				</tr>
+				<tr data-tab="8">
+					<td><div class="icon_set is7"></div></td>
+					<td>My Profile</td>
+				</tr>
+				<tr data-tab="9">
+					<td><div class="icon_set is8"></div></td>
+					<td>Help</td>
+				</tr>
+			</table>
+		</section>
+		<section id="right_column">		
+			<section id="tab1">
+			
+			
+				<div class="column_head">
+					<span>Credits <i class="fa fa-angle-right"></i><div> Buy credits</div></span>
+					<div class="column_head_right">Buy credits | <span>Purchase History</span></div>
+				</div>
+				<div class="section_row">
+					<h2 class="section_header">Buy credits	<a class="registerbtn" href="#">Buy Credits</a></h2>
+				</div>	
+				<div id="packages-block">
+					
+					
+					
+					
+					
+				</div>
+				
+			</section>
+			<section id="tab2">
+				<div class="column_head">
+					<span>Course manager</span>
+				</div>
+				<div class="row">
+					<div class="block block-course">
+						<h2><span>1</span>Select Course</h2>
+						<div class="search">
+							<i class="fa fa-search"></i><input type="text" placeholder="Search Course">
+						</div>
+						<div class="list">
+							<ul id="course-ul">
+								<li>Engineering <span>Inactive</span></li>
+								<li>Management <span>Active</span></li>
+								<li>Commerce <span>Inactive</span></li>
+							</ul>
+							<div id="course-scroll"></div>
+						</div>
+						<div class="block_current">
+							<span data-action="add">+</span>
+							<input type="text" id="input-course" class="course"></input>
+							<div class="state"><span>Active</span><div class="sub"><ul><li data-mark="1">Mark as active</li><li data-mark="0">Mark as inactive</li></ul></div></div>
+						</div>
+						<button class="disabled">Save</button>
+						<div class="remove disabled" data-ul="course-ul">Delete Course<i class="fa fa-times-circle"></i></div>
+					</div>
+					<div class="block block-subject">
+						<h2><span>2</span>Select Subject</h2>
+						<div class="search">
+							<i class="fa fa-search"></i><input type="text" placeholder="Search Subject">
+						</div>
+						<div class="list">
+							<ul id="subject-ul">
+								<li>Interior Design<span>Inactive</span></li>
+								<li>Architecture<span>Inactive</span></li>
+								<li>Web Design<span>Inactive</span></li>
+								<li>Medical<span>Inactive</span></li>
+							</ul>
+							<div id="subject-scroll"></div>
+						</div>
+						<div class="block_current">
+							<span data-action="add">+</span>
+							<input type="text" id="input-subject" class="course"></input>
+							<div class="state"><span>Active</span><div class="sub"><ul><li data-mark="1">Mark as active</li><li data-mark="0">Mark as inactive</li></ul></div></div>
+						</div>
+						<button class="disabled">Save</button>
+						<div class="remove disabled" data-ul="subject-ul">Delete Subject<i class="fa fa-times-circle"></i></div>
+					</div>
+					<div class="block block-section">
+						<h2><span>3</span>Select Section</h2>
+						<div class="search">
+							<i class="fa fa-search"></i><input type="text" placeholder="Search Section">
+						</div>
+						<div class="list">
+							<ul id="section-ul">
+								<li><i class="fa fa-circle-thin"></i>Architecture</li>
+								<li><i class="fa fa-circle-thin"></i>Web Design</li>
+								<li><i class="fa fa-circle-thin"></i>Medical</li>
+								<li><i class="fa fa-circle-thin"></i>Arts</li>
+							</ul>
+							<div id="section-scroll"></div>
+						</div>
+						<div class="block_current">
+							<span data-action="add">+</span>
+							<input type="text" id="input-section" class="course"></input>							
+						</div>
+						<button class="disabled">Save</button>
+						<div class="remove disabled" data-ul="section-ul">Delete Section<i class="fa fa-times-circle"></i></div>
+					</div>
+				</div>
+			</section>
+			<section id="tab3">
+				Tab number 3
+			</section>
+			<section id="tab4">
+				Tab number 4
+			</section>
+			<section id="tab5">
+				<div class="column_head">
+					<span>Exam manager</span> > View Exam
+				</div>
+				<div class="row">
+
+				</div>
+			</section>
+			<section id="tab6">
+				Tab number 6
+			</section>
+			<section id="tab7">
+				Tab number 7
+			</section>
+			<section id="tab8">
+				Tab number 8
+			</section>
+			<section id="tab9">
+				Tab number 9
+			</section>
+		</section>
+	</section>
+	<footer>
+		<div class="row">
+			&copy 2014. Evaluate. All rights reserved
+		</div>
+	</footer>
+
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script src="http://code.jquery.com/ui/1.11.0/jquery-ui.js"></script>
+	<script type="text/javascript" src="js/init.js"></script>
+</body>
+</html>

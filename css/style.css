@@ -573,6 +573,9 @@ footer {
 	text-shadow: 0.5px 0.5px 0 #000000;
 	font-weight: bold;
 }
+.registerbtn:hover{
+	background:#232323;
+}
 
 .signinbtn {
 	background:	#ffffff;
@@ -592,6 +595,13 @@ footer {
 	font-size:17px;
 
 }
+
+.signinbtn:hover{
+	background:#232323;
+	color:#fff;
+
+}
+
 .signin-little{
 	font-size: 10px;
 	line-height:0px;
@@ -728,11 +738,6 @@ footer {
 	background:#da534f;
 }
 
-/*#login-btn:active{
-	background:linear-gradient(#428bca 50%, #3984c5 50%);
-	border-color:#397fba;
-	margin:15px auto;   		
-}*/
 
 #login-bottom {
 	position:absolute;
@@ -742,9 +747,7 @@ footer {
 	bottom:0;
 	font-size:12px;
 	color:#626262;
-	text-align:center;
-	
-	
+	text-align:center;	
 
 }
 .form-group {
@@ -778,6 +781,8 @@ h2.section_header span {
 	line-height: 32px;
 	color: #555;
 }
+
+
 .column_head_right {
 	float: right;
 	font-size: 14px;
@@ -798,3 +803,35 @@ h2.section_header span {
 	font-size: 14px;
 	font-weight: 500;	
 }
+
+/* css v2 */
+
+h2.section_header a {
+	font-size: 12.8px;
+	line-height: 22px;
+	width: auto;
+	padding: 7px 13px;
+	margin-top: -10px;
+}
+
+
+
+
+#login-btn:active{
+	background:linear-gradient(#428bca 50%, #3984c5 50%);
+	border-color:#397fba;
+	margin:15px auto;   		
+}
+
+#packages-block{
+	display:block;
+	width:60%;
+	background:#fff;
+	height:250px;
+	margin:30px 2.5%;
+
+
+
+}
+
+
