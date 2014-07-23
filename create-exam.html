@@ -87,9 +87,9 @@
 										<div class="select">
 											<span>MBA<i class="fa fa-caret-down"></i></span>
 											<ul>
-												<li></li>
-												<li></li>
-												<li></li>
+												<li>MBA</li>
+												<li>MBA</li>
+												<li>MBA</li>
 											</ul>
 										</div>
 									</td>
@@ -122,15 +122,86 @@
 							<table class="table table-bordered table-settings-exam">
 								<tr>
 									<td>Exam Screen</td>
+									<td>
+										<label class="radio-inline">
+										  <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1"> 1
+										</label>
+										<label class="radio-inline">
+										  <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2"> 2
+										</label>
+										<label class="radio-inline">
+										  <input type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3"> Per question
+										</label>
+									</td>
+								</tr>
+								<tr>
+									<td>Max Attempts</td>
+									<td>
+										<label class="radio-inline">
+										  <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1"> 1
+										</label>
+										<label class="radio-inline">
+										  <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2"> 2
+										</label>
+									</td>
+								</tr>
+								<tr>
+									<td>Timer Type</td>
+									<td>
+										<label class="radio-inline">
+										  <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1"> Per paper
+										</label>
+										<label class="radio-inline">
+										  <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2"> Per question
+										</label>
+									</td>
+								</tr>
+								<tr>
+									<td>Exam Time (mins)</td>
+									<td>
+										<input type="text" name="exam_time">
+									</td>
+								</tr>
+								<tr>
+									<td>Schedule Exam</td>
+									<td><i class="fa fa-check-circle"></i> Yes</td>
+								</tr>
+								<tr>
+									<td>Exam Start Date &amp; Time</td>
 									<td></td>
 								</tr>
 								<tr>
-									<td>Exam Screen</td>
+									<td>Exam End Date &amp; Time</td>
 									<td></td>
 								</tr>
 								<tr>
-									<td>Exam Screen</td>
-									<td></td>
+									<td>Passing (%)</td>
+									<td><input type="text" name="passing"><span class="pull-right-10">Set as default <i class="fa fa-check-circle"></i></span></td>
+								</tr>
+								<tr>
+									<td>Negative Marking</td>
+									<td><i class="fa fa-circle-thin"></i> Yes</td>
+								</tr>
+								<tr>
+									<td>Marks per Question</td>
+									<td><input type="text" name="negative_marking"><span class="pull-right-10">Set as default <i class="fa fa-check-circle"></i></span></td>
+								</tr>
+								<tr>
+									<td>Negative Marks</td>
+									<td><input type="text" name="negative_marking"><span class="pull-right-10">Set as default <i class="fa fa-check-circle"></i></span></td>
+								</tr>
+								<tr>
+									<td>Show Detail Result</td>
+									<td><i class="fa fa-circle-thin"></i> Yes</td>
+								</tr>
+								<tr>
+									<td>Grading (%)</td>
+									<td>
+										<div class="grade">A</div>
+										<div class="grade">B</div>
+										<div class="grade">C</div>
+										<div class="grade">D</div>
+									</td>
 								</tr>
 							</table>
 							<div class="exam-btn">Save</div>
@@ -154,7 +225,7 @@
 								</ul>
 							</div>
 							<div class="selection_subject">
-								<span>Select Course<i class="fa fa-caret-down"></i></span>
+								<span>Select Subject<i class="fa fa-caret-down"></i></span>
 								<ul class="selection_subject_sub">
 									<li></li>
 									<li></li>
