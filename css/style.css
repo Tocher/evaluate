@@ -164,7 +164,7 @@ table {
 	border-spacing:0px;
 }
 #left_column td {
-	padding:5px 0px;
+	padding:3px 0px;
 	width: 200px;
 	border-bottom: 1px solid #ccc;
 	border-right: 1px solid #ccc;
@@ -240,7 +240,7 @@ table {
 .column_head::before, .column_head::after {
     content: ''; 
     position: absolute;
-    left: 45px; bottom: -20px;
+    left: 20px; bottom: -20px;
     border: 10px solid transparent;
     border-top: 10px solid #ccc;
    }
@@ -248,13 +248,17 @@ table {
     border-top: 10px solid white;
     bottom: -19px; 
    }
-.column_head span {
+.column_head > span {
 	position: absolute;
-	left:50px;
+	left:25px;
 	font-weight: 700;
 	text-transform: uppercase;
 }
-.column_head span div {
+.column_head span i {
+	margin:0 10px;
+	font-size:18px;
+}
+.column_head > span div {
 	font-weight: 500;
 	text-transform: none;
 	display: inline-block;
@@ -767,4 +771,30 @@ h2.section_header {
 	color:#757575;
 	border-bottom:1px solid #ccc;
 	padding-bottom: 10px;
+}
+h2.section_header span {
+	font-size: 14px;
+	float: right;
+	line-height: 32px;
+	color: #555;
+}
+.column_head_right {
+	float: right;
+	font-size: 14px;
+	color: #555;
+	font-family: Raleway;
+	margin-right: 20px;
+}
+.column_head_right span {
+	color:#da534f;
+}
+
+#view_exam {
+
+}
+#view_exam h3 {
+	color:#555;
+	font-family: Raleway;
+	font-size: 14px;
+	font-weight: 500;	
 }
