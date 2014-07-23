@@ -596,27 +596,25 @@ footer {
 	background:rgba(0,0,0,0.5);
  
  }
- #login-form {
-		
+ #login-form {		
 	display: block;
 	position:absolute;
 	left:50%;
 	width:420px;
-	margin-left:-210px;
-	
+	margin-left:-210px;	
 	height:476px;	
-	margin-top:10px;
+	margin-top:2%;
 	background:url(../img/login-background.png);
 	
-	
-	border: 5px solid;
-	border-color:rgba(0,0,0,0.4);
-	border-radius: 4px;
+	border: 10px solid;
+	border-color: rgba(185, 185, 185, 0.5);
+	border-radius: 15px;
+	background-clip: padding-box;
 	
 }
 #login-headline{
 	font-size:25px;
-	font-family:Rockwell;
+	font-family:Kameron;
 	color:#626262;
 	text-align:center;
 
@@ -706,7 +704,7 @@ footer {
 	text-align:center; 
 	font-size:20px;
 	color:#fff;
-	line-height: 45px;
+	line-height: 54px;
 	text-decoration:none;
 	
 }	
@@ -715,11 +713,11 @@ footer {
 	background:#da534f;
 }
 
-#login-btn:active{
+/*#login-btn:active{
 	background:linear-gradient(#428bca 50%, #3984c5 50%);
 	border-color:#397fba;
-	margin:15px auto;   		/* ТУТ НАДА НА 2px НИЖЕ ОК */	 
-}
+	margin:15px auto;   		
+}*/
 
 #login-bottom {
 	position:absolute;
@@ -733,4 +731,20 @@ footer {
 	
 	
 
+}
+.form-group {
+	position: relative;
+}
+.form-group i.fa-check-circle {	
+	color: #47a746;
+}
+.form-group i.fa-times-circle {	
+	color: #d9524c;
+}
+.form-group i {
+	position: absolute;
+	top: 0;
+	line-height: 40px;
+	right: 15%;
+	font-size: 18px;
 }
