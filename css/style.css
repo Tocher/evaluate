@@ -593,6 +593,7 @@ footer {
 }
 .registerbtn:hover{
 	background:#232323;
+	cursor: pointer;
 }
 
 .signinbtn {
@@ -686,7 +687,7 @@ footer {
 	color: #47a746;
 }
 
-#form1 {
+.form1 {
 	display: block;
 	width: 70%;
 	margin-left:15%;
@@ -704,7 +705,7 @@ footer {
 	
 }
 
-#form2 {
+.form2 {
 	display: block;
 	width: 70%;
 	margin-left:15%;
@@ -721,7 +722,7 @@ footer {
 	
 }
 
-#form3 {
+.form3 {
 	display: block;
 	width: 70%;
 	margin-left:15%;
@@ -1004,10 +1005,29 @@ h2.section_header a {
 	right: 10px;
 }
 .selections > div > ul {
-	display: none;
+	top: 100%;
 	position: absolute;
+	opacity: 0;
+	left:-9999px;
+	background: #fff;
+	border:1px solid #e2e2e2;
+	box-shadow: 1px 1px 3px #ccc;
+	list-style: none;
+	margin:0;
+	padding: 0;
 }
-#view_exam_tab {
+.selections > div > ul > li {
+	padding:10px;
+	min-width: 200px;
+}
+.selections > div > ul > li:hover {
+	background: #f1f1f1;
+}
+.selections > div:hover ul {
+	left:0;
+	opacity: 1;
+}
+#create_exam_tab {
 	display: none;
 }
 .create-exam {
