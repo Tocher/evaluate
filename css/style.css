@@ -27,6 +27,7 @@ header {
 header > .row {
 	padding-top: 15px;
 	padding-bottom: 15px;
+	position: relative;
 }
 .logo {
 	width: 180px;
@@ -39,6 +40,13 @@ header > .row {
 .pull-right {
 	float: right;
 	margin-right: 20px;
+}
+.pull-right-d {
+	vertical-align: middle;
+	display: inline-block;
+	position: absolute;
+	right: 0px;
+	top:20px;
 }
 
 .profile {
@@ -655,6 +663,29 @@ footer {
 
 }
 
+.form-group label.error {
+	display: inline-block;
+	font-family: FontAwesome;
+	font-style: normal;
+	font-weight: normal;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	position: absolute;
+	top: 0;
+	line-height: 40px;
+	right: 15%;
+	font-size: 18px;
+}
+.form-group label.error::before {
+	content: "\f057";	
+	color: #d9524c;
+}
+.form-group label.valid::before {
+	content: "\f058";
+	color: #47a746;
+}
+
 #form1 {
 	display: block;
 	width: 70%;
@@ -724,6 +755,9 @@ footer {
 	margin-top:5px;
 	text-decoration:none;
 	
+}
+#rest-pass:hover {
+	text-decoration: underline;
 }
 
 #login-btn{
