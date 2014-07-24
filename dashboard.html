@@ -487,30 +487,49 @@
 			<section id="tab7">
 				<div class="column_head">
 					<span>Credits <i class="fa fa-angle-right"></i><div> Buy credits</div></span>
-					<div class="column_head_right">Buy credits | <span>Purchase History</span></div>
+					<div class="column_head_right"><span id="switch_to_buy_credits" class="selected">Buy credits</span> | <span id="switch_to_purchase_history">Purchase History</span></div>
 				</div>
 				<div class="section_row">
 					<h2 class="section_header">Buy credits	<a class="registerbtn" href="#">Buy Credits</a></h2>
 				</div>	
-				<div id="packages-block">
-					
-					
-					
-					
-					
-				<div class="packages-block">
-					<div class="packages-text-wrap">	
-						<span class="medium-bold" style="float:left;">Packages</span><span class="semi-bold" style="float:right; font-size:14px;">Per credit = Per student</span>
-					</div>	
-					<div class="packages-price"><div class="students-wrap"></div><div class="price-wrap"></div><div class="description-wrap"></div></div>
-					<div class="packages-price"><div class="students-wrap"></div><div class="price-wrap"></div><div class="description-wrap"></div></div>					
-					<div class="packages-price"><div class="students-wrap"></div><div class="price-wrap"></div><div class="description-wrap"></div></div>
-				</div>
-				<div class="buy-cred-block">
-				
-				
-				
-				
+				<div style="position:relative;">	
+					<div class="packages-block">
+						<div class="packages-text-wrap">	
+							<span class="medium-bold" style="float:left;">Packages</span><span class="semi-bold" style="float:right; font-size:14px;">Per credit = Per student</span>
+						</div>	
+						<div class="packages-price"><div class="students-wrap">1 to 5 Students</div><div class="price-wrap"> <i class="fa fa-inr"></i>100 </div><div class="description-wrap"> Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor </div></div>
+						<div class="packages-price"><div class="students-wrap">6 to 15 Students</div><div class="price-wrap"> <i class="fa fa-inr"></i>80 </div><div class="description-wrap"> Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor </div></div>					
+						<div class="packages-price"><div class="students-wrap">16 to 30 Students</div><div class="price-wrap"> <i class="fa fa-inr"></i>50 </div><div class="description-wrap"> Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor </div></div>
+					</div>
+					<div class="buy-cred-block">
+						<div class="buy-cred-text-wrap">
+							<span class="medium-bold" style="float:left;">Buy credits</span>
+							<img src="img/excl-icon.png" id="credits-icon">
+						</div>
+						<div id="credits-text1">Credits</div>
+						<input type="text"  placeholder="Number of credits" name="Amount" id="credits-amount"/>
+						<div id="credits-text2">Total amount</div>
+						<div id="credits-price">Rs. 20,000</div>
+						<div class="wrap">
+							<a id="total-credits" href="#">View Total Credits</a>
+						</div>
+						<a class="buy-cred-btn" href="#">Buy Credits</a>					
+					</div>
+					<div class="purch-history-block">
+						<div class="buy-cred-text-wrap">
+							<span class="medium-bold" style="float:left;">Total credits</span>
+							<img src="img/excl-icon.png" id="credits-icon">
+						</div>
+						<div class="wrap">
+							<div class="dot-block" style="border-color:#8e8e8e"><span> Total Credits </span><br> 225</div>
+							<div class="dot-block" style="border-color:#84c284"><span> Used </span><br> 200</div>
+							<div class="dot-block" style="border-color:#e68c8a"><span> Remaining </span><br> 25</div>
+						</div>
+						<div class="wrap">
+							<a id="total-credits" href="#">Purchase history</a>
+						</div>
+					<a class="buy-cred-btn" href="#">Buy Credits</a>
+					</div>
 				</div>
 			</section>
 			<section id="tab8">

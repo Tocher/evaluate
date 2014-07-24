@@ -604,7 +604,7 @@ $(document).ready(function() {
 
 var selected_exams = [];
 	// Remove row from exam view
-	$("#view_exam td i").click(function() {
+	$("#view_exam td:last-child i").click(function() {
 		$(this).parent().parent().fadeOut(function(e) {
 			e.remove();
 		});
