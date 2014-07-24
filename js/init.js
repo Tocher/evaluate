@@ -603,7 +603,6 @@ $(document).ready(function() {
 	});
 
 var selected_exams = [];
-//fa-check-circle
 	// Remove row from exam view
 	$("#view_exam td i").click(function() {
 		$(this).parent().parent().fadeOut(function(e) {
@@ -646,5 +645,24 @@ var selected_exams = [];
 	//Init datepicker
 	$("#exam_start_date").datepicker();
 	$("#exam_end_date").datepicker();
+
+///////////////////// Credits JS ///////////////////////////
+	$("#switch_to_buy_credits").click(function() {
+		$(".purch-history-block").hide();
+		$(".buy-cred-block").fadeIn();
+		$(this).addClass("selected");
+		$("#switch_to_purchase_history").removeClass("selected");
+
+
+	});
+
+	$("#switch_to_purchase_history").click(function() {		
+		$(".buy-cred-block").hide();
+		$(".purch-history-block").fadeIn();
+		$(this).addClass("selected");		
+		$("#switch_to_buy_credits").removeClass("selected");
+
+	});
+
 
 });
