@@ -96,23 +96,50 @@
 								</tr>
 								<tr>
 									<td>Subject*</td>
-									<td></td>
+									<td>
+										<div class="select">
+											<span>Marketing II<i class="fa fa-caret-down"></i></span>
+											<ul>
+												<li>Marketing I</li>
+												<li>Marketing II</li>
+												<li>Marketing III</li>
+											</ul>
+										</div>
+									</td>
 								</tr>
 								<tr>
 									<td>Question Paper*</td>
-									<td></td>
+									<td>
+										<div class="select">
+											<span>Marketing management<i class="fa fa-caret-down"></i></span>
+											<ul>
+												<li>Marketing management</li>
+												<li>Marketing management</li>
+												<li>Marketing management</li>
+											</ul>
+										</div>
+									</td>
 								</tr>
 								<tr>
 									<td>Batch Name*</td>
-									<td></td>
+									<td>
+										<div class="select">
+											<span>Div A<i class="fa fa-caret-down"></i></span>
+											<ul>
+												<li>Div A</li>
+												<li>Div B</li>
+												<li>Div C</li>
+											</ul>
+										</div>
+									</td>
 								</tr>
 								<tr>
 									<td>Exam Name*</td>
-									<td></td>
+									<td><input type="text" value="First semister"></td>
 								</tr>
 								<tr>
 									<td>Exam Summary</td>
-									<td></td>
+									<td><textarea></textarea></td>
 								</tr>
 							</table>
 							<div class="registerbtn create-exam">Create</div>
@@ -122,38 +149,31 @@
 							<table class="table table-bordered table-settings-exam">
 								<tr>
 									<td>Exam Screen</td>
-									<td>
-										<label class="radio-inline">
-										  <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1"> 1
-										</label>
-										<label class="radio-inline">
-										  <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2"> 2
-										</label>
-										<label class="radio-inline">
-										  <input type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3"> Per question
-										</label>
+									<td>										
+										<input type="radio" name="inlineRadioOptions" id="exam_screen1" value="option1">
+										<label class="radio-inline" for="exam_screen1"><span></span>1</label>
+										<input type="radio" name="inlineRadioOptions" id="exam_screen2" value="option2">
+										<label class="radio-inline" for="exam_screen2"><span></span>2</label>
+										<input type="radio" name="inlineRadioOptions" id="exam_screen3" value="option3">
+										<label class="radio-inline" for="exam_screen3"><span></span>Per question</label>
 									</td>
 								</tr>
 								<tr>
 									<td>Max Attempts</td>
 									<td>
-										<label class="radio-inline">
-										  <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1"> 1
-										</label>
-										<label class="radio-inline">
-										  <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2"> 2
-										</label>
+										<input type="radio" name="inlineRadioOptions2" id="max_attempts1" value="option1">
+										<label class="radio-inline" for="max_attempts1"><span></span>1</label>
+										<input type="radio" name="inlineRadioOptions2" id="max_attempts2" value="option2">
+										<label class="radio-inline" for="max_attempts2"><span></span>2</label>
 									</td>
 								</tr>
 								<tr>
 									<td>Timer Type</td>
 									<td>
-										<label class="radio-inline">
-										  <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1"> Per paper
-										</label>
-										<label class="radio-inline">
-										  <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2"> Per question
-										</label>
+										<input type="radio" name="inlineRadioOptions3" id="timer_type1" value="option1">
+										<label class="radio-inline" for="timer_type1"><span></span>Per paper</label>
+										<input type="radio" name="inlineRadioOptions3" id="timer_type2" value="option2">
+										<label class="radio-inline" for="timer_type2"><span></span>Per question</label>										
 									</td>
 								</tr>
 								<tr>
@@ -164,15 +184,15 @@
 								</tr>
 								<tr>
 									<td>Schedule Exam</td>
-									<td><i class="fa fa-check-circle"></i> Yes</td>
+									<td class="exam-settings-change"><i class="fa fa-check-circle"></i> Yes</td>
 								</tr>
 								<tr>
 									<td>Exam Start Date &amp; Time</td>
-									<td></td>
+									<td><input type="text" id="exam_start_date"><i class="fa fa-calendar-o"></i></td>
 								</tr>
 								<tr>
 									<td>Exam End Date &amp; Time</td>
-									<td></td>
+									<td><input type="text" id="exam_end_date"><i class="fa fa-calendar-o"></i></td>
 								</tr>
 								<tr>
 									<td>Passing (%)</td>
@@ -180,7 +200,7 @@
 								</tr>
 								<tr>
 									<td>Negative Marking</td>
-									<td><i class="fa fa-circle-thin"></i> Yes</td>
+									<td class="exam-settings-change"><i class="fa fa-circle-thin"></i> Yes</td>
 								</tr>
 								<tr>
 									<td>Marks per Question</td>
@@ -192,7 +212,7 @@
 								</tr>
 								<tr>
 									<td>Show Detail Result</td>
-									<td><i class="fa fa-circle-thin"></i> Yes</td>
+									<td class="exam-settings-change"><i class="fa fa-circle-thin"></i> Yes</td>
 								</tr>
 								<tr>
 									<td>Grading (%)</td>
@@ -260,7 +280,7 @@
 								</thead>
 								<tbody>
 									<tr>
-										<td><i class="fa fa-check-circle"></i></td>
+										<td><i class="fa fa-circle-thin"></i></td>
 										<td>1</td>
 										<td>Marketing semister 1</td>
 										<td>Marketing semister 1</td>
@@ -274,7 +294,7 @@
 										<td>Edit <i class="fa fa-times-circle"></i></td>
 									</tr>
 									<tr>
-										<td><i class="fa fa-check-circle"></i></td>
+										<td><i class="fa fa-circle-thin"></i></td>
 										<td>1</td>
 										<td>Marketing semister 1</td>
 										<td>Marketing semister 1</td>
@@ -288,7 +308,7 @@
 										<td>Edit <i class="fa fa-times-circle"></i></td>
 									</tr>
 									<tr>
-										<td><i class="fa fa-check-circle"></i></td>
+										<td><i class="fa fa-circle-thin"></i></td>
 										<td>1</td>
 										<td>Marketing semister 1</td>
 										<td>Marketing semister 1</td>
@@ -303,7 +323,7 @@
 									</tr>
 								</tbody>
 							</table>
-							<div class="registerbtn">Delete Selected</div>
+							<div class="registerbtn" id="delete_selected_exams">Delete Selected</div>
 						</div>
 					</div>
 				</section>

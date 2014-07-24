@@ -291,7 +291,7 @@ table {
 	display: inline-block;
 	vertical-align: top;
 	box-shadow: 0px 1px 2px #ccc;
-	padding-bottom: 20px;
+	padding-bottom: 10px;
 }
 .block-subject, .block-section {
 	display: none;
@@ -359,7 +359,7 @@ table {
 	vertical-align: top;
 }
 .block ul li {
-	height: 35px;
+	min-height: 35px;
 	line-height: 35px;	
 	padding-left:20px;
 	color: #565656;
@@ -400,7 +400,7 @@ table {
 	float: none;
 }
 .block .list {
-	height: 300px;
+	height: 150px;
 	overflow: hidden;
 	border-bottom: 1px solid #dadada;
 }
@@ -517,7 +517,7 @@ table {
 }
 
 #course-scroll, #subject-scroll, #section-scroll {
-	height: 285px;
+	height: 135px;
 	display: inline-block;
 	vertical-align: top;
 	width: 9px;
@@ -912,6 +912,10 @@ h2.section_header a {
 	background: #fff;
 	padding:5px 10px;
 }
+#view_exam table tr:hover td {
+	background: #f1f1f1;
+	cursor: pointer;
+}
 #view_exam .registerbtn {
 	 padding: 7px 13px;
 	 border-radius: 5px;
@@ -963,6 +967,9 @@ h2.section_header a {
 .selections > div:first-child {
 	border-top-left-radius: 5px;
 	border-bottom-left-radius: 5px;
+}
+.selections > div:last-child:hover {
+	background: #666;
 }
 .selections > div:last-child {
 	border-top-right-radius: 5px;
@@ -1036,6 +1043,12 @@ h2.section_header a {
 }
 .table-create-exam td:last-child {
 	padding:0;
+	color: #555;
+}
+.table-create-exam input,.table-create-exam textarea {
+	border:none;
+	padding: 10px;
+	color: #555;
 }
 .table-settings-exam tr td:first-child {
 	width:30%;
@@ -1043,6 +1056,41 @@ h2.section_header a {
 }
 .table-settings-exam input {
 	border:none;
+}
+.table-settings-exam input[type="radio"] {
+	display: none;
+}
+.table-settings-exam input[type="radio"]:checked + label span::before {
+	content: "\f192";
+}
+.table-settings-exam input[type="radio"] + label span::before {
+	content: "\f1db";
+}
+.table-settings-exam input[type="radio"] + label span {
+    display:inline-block;
+    width:19px;
+    height:19px;
+    margin:-1px 4px 0 0;
+    vertical-align:middle;
+    cursor:pointer;
+    
+    font-size: 18px;
+    color: #636363;
+	font-family: FontAwesome;
+	font-style: normal;
+	font-weight: normal;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+.table-settings-exam input[type="radio"]:checked + label span {
+    color: #47a447;
+}
+.exam-settings-change {
+	cursor: pointer;
+}
+.radio-inline {
+	margin-right: 30px;
 }
 .table-settings-exam i {	
 	font-size: 18px;
@@ -1118,6 +1166,7 @@ h2.section_header a {
 .select:hover ul {
 	left:0;
 	opacity: 1;
+	z-index: 999;
 }
 
 .packages-block{

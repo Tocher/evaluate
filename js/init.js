@@ -20,8 +20,8 @@ $(document).ready(function() {
       max: 100,
       value: 100,
       slide: function( event, ui ) {
-      	if($("#course-ul").height() - 300 > 0) {
-      		var max_margin = $("#course-ul").height() - 300;
+      	if($("#course-ul").height() - 150 > 0) {
+      		var max_margin = $("#course-ul").height() - 150;
       		$( "#course-ul" ).css("margin-top", (-max_margin*(100-ui.value)/100) + "px" );
       	}
       }
@@ -33,8 +33,8 @@ $(document).ready(function() {
       max: 100,
       value: 100,
       slide: function( event, ui ) {
-      	if($("#subject-ul").height() - 300 > 0) {
-      		var max_margin = $("#subject-ul").height() - 300;
+      	if($("#subject-ul").height() - 150 > 0) {
+      		var max_margin = $("#subject-ul").height() - 150;
       		$( "#subject-ul" ).css("margin-top", (-max_margin*(100-ui.value)/100) + "px" );
       	}
       }
@@ -46,8 +46,8 @@ $(document).ready(function() {
       max: 100,
       value: 100,
       slide: function( event, ui ) {
-      	if($("#section-ul").height() - 300 > 0) {
-      		var max_margin = $("#section-ul").height() - 300;
+      	if($("#section-ul").height() - 150 > 0) {
+      		var max_margin = $("#section-ul").height() - 150;
       		console.log(max_margin);
       		$( "#section-ul" ).css("margin-top", (-max_margin*(100-ui.value)/100) + "px" );
       	}
@@ -80,8 +80,8 @@ $(document).ready(function() {
 		    }
 	    }
 
-	    if($("#course-ul").height() - 300 > 0) {
-      		var max_margin = $("#course-ul").height() - 300;
+	    if($("#course-ul").height() - 150 > 0) {
+      		var max_margin = $("#course-ul").height() - 150;
       		$( "#course-ul" ).css("margin-top", (-max_margin*(100-$( "#course-scroll" ).slider( "value"))/100) + "px" );
       	}
 	    this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
@@ -113,8 +113,8 @@ $(document).ready(function() {
 		    }
 	    }
 
-	    if($("#subject-ul").height() - 300 > 0) {
-      		var max_margin = $("#subject-ul").height() - 300;
+	    if($("#subject-ul").height() - 150 > 0) {
+      		var max_margin = $("#subject-ul").height() - 150;
       		$( "#subject-ul" ).css("margin-top", (-max_margin*(100-$( "#subject-scroll" ).slider( "value"))/100) + "px" );
       	}
 	    this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
@@ -146,8 +146,8 @@ $(document).ready(function() {
 		    }
 	    }
 
-	    if($("#section-ul").height() - 300 > 0) {
-      		var max_margin = $("#section-ul").height() - 300;
+	    if($("#section-ul").height() - 150 > 0) {
+      		var max_margin = $("#section-ul").height() - 150;
       		$( "#section-ul" ).css("margin-top", (-max_margin*(100-$( "#section-scroll" ).slider( "value"))/100) + "px" );
       	}
 	    this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
@@ -601,5 +601,50 @@ $(document).ready(function() {
 		$("#create_exam_tab").hide();
 		$("#view_exam_tab").fadeIn();
 	});
+
+var selected_exams = [];
+//fa-check-circle
+	// Remove row from exam view
+	$("#view_exam td i").click(function() {
+		$(this).parent().parent().fadeOut(function(e) {
+			e.remove();
+		});
+	});
+	$("#view_exam tbody tr").click(function() {
+		if($.inArray(this,selected_exams) === -1) {
+			$(this).find("td").first().find("i").removeClass("fa-circle-thin").addClass("fa-check-circle");
+			selected_exams.push(this);
+		}
+		else {			
+			$(this).find("td").first().find("i").removeClass("fa-check-circle").addClass("fa-circle-thin");
+			selected_exams.pop(this);
+		}
+	});
+
+	//Remove Selected Exams
+	$("#delete_selected_exams").click(function() {
+		if(selected_exams.length == 0)
+			return;
+		for (var i = selected_exams.length - 1; i >= 0; i--) {
+			$(selected_exams[i]).fadeOut(function(i) {
+				console.log(i);
+				$(selected_exams[i]).remove();
+			});
+		};
+		selected_exams = [];
+	});
+
+	$(".exam-settings-change").click(function() {
+		if($(this).find('i').hasClass('fa-check-circle'))
+		{
+			$(this).find('i').removeClass('fa-check-circle').addClass('fa-circle-thin');
+		}
+		else
+			$(this).find('i').removeClass('fa-circle-thin').addClass('fa-check-circle');
+	});
+
+	//Init datepicker
+	$("#exam_start_date").datepicker();
+	$("#exam_end_date").datepicker();
 
 });
