@@ -664,5 +664,4 @@ var selected_exams = [];
 
 	});
 
-
 });

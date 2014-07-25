@@ -678,6 +678,48 @@ footer {
 	right: 15%;
 	font-size: 18px;
 }
+.form-group label.error span {
+	display: none;
+    position: absolute;
+	line-height: 12px;
+	padding: 5px;
+	font-size: 12px;
+	text-align: center;
+	color: #fff;
+	background: #000;
+	border: 1px solid #000;
+	border-radius: 5px;
+	text-shadow: rgba(0, 0, 0, 0.0980392) 1px 1px 1px;
+	box-shadow: rgba(0, 0, 0, 0.0980392) 1px 1px 2px 0px;
+	margin-top: -30px;
+	margin-left: -40px;
+	width: 140px;
+	top: 10px;
+	font-family: 'Raleway', sans-serif;
+}
+.form-group label.error span:after {
+	content: "";
+	position: absolute;
+	width: 0;
+	height: 0;
+	border-width: 9px;
+	border-style: solid;
+	border-color: #000 transparent transparent transparent;
+	top: 20px;
+	left: 23px;
+}
+.form-group label.error span:before {
+	content: "";
+	position: absolute;
+	width: 0;
+	height: 0;
+	border-width: 10px;
+	border-style: solid;
+	border-color: #000 transparent transparent transparent;
+	top: 20px;
+	left: 22px;
+}
+
 .form-group label.error::before {
 	content: "\f057";	
 	color: #d9524c;
@@ -753,7 +795,7 @@ footer {
 	float:right;
 	color:#7d7d7d;
 	font-size:11px;
-	margin-top:5px;
+	margin-top:4px;
 	text-decoration:none;
 	
 }
