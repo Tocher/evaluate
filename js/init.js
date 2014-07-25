@@ -665,4 +665,60 @@ var selected_exams = [];
 	});
 
 
+
+
+
+////////////////////////// myprofile js //////////////////////
+
+
+
+/*	$("#switch_to_create_exam").click(function() {
+		$("#view_exam_tab").hide();
+		$("#create_exam_tab").fadeIn();
+	});
+
+	$("#switch_to_view_exam").click(function() {
+		$("#create_exam_tab").hide();
+		$("#view_exam_tab").fadeIn();
+	});  */
+
+var selected_exams = [];
+	// Remove row from exam view
+	$("#manage_staff td:last-child i").click(function() {
+		$(this).parent().parent().fadeOut(function(e) {
+			e.remove();
+		});
+	});
+	$("#manage_staff tbody tr").click(function() {
+		if($.inArray(this,selected_exams) === -1) {
+			$(this).find("td").first().find("i").removeClass("fa-circle-thin").addClass("fa-check-circle");
+			selected_exams.push(this);
+		}
+		else {			
+			$(this).find("td").first().find("i").removeClass("fa-check-circle").addClass("fa-circle-thin");
+			selected_exams.pop(this);
+		}
+	});
+/*
+	//Remove Selected Exams
+	$("#delete_selected_exams").click(function() {
+		if(selected_exams.length == 0)
+			return;
+		for (var i = selected_exams.length - 1; i >= 0; i--) {
+			$(selected_exams[i]).fadeOut(function(i) {
+				console.log(i);
+				$(selected_exams[i]).remove();
+			});
+		};
+		selected_exams = [];
+	});
+
+	$(".exam-settings-change").click(function() {
+		if($(this).find('i').hasClass('fa-check-circle'))
+		{
+			$(this).find('i').removeClass('fa-check-circle').addClass('fa-circle-thin');
+		}
+		else
+			$(this).find('i').removeClass('fa-circle-thin').addClass('fa-check-circle');
+	});  */
 });
