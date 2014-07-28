@@ -1,27 +1,42 @@
 $(document).ready(function() {	
 
+	var block_list_height = 150;
+	var header_height = 353;
 //////	adapting column width 	//////
-	$("#right_column").css("min-height",$(window).height() - $("header").height() - $("footer").height() - $("#right_column").css("border-top-width").substr(0,$("#right_column").css("border-top-width").length-2));
+	var rc_height = $(window).height() - $("header").height() - $("footer").height() - $("#right_column").css("border-top-width").substr(0,$("#right_column").css("border-top-width").length-2);
+	$("#right_column").css("min-height",rc_height);
 	$("#left_column").css("min-height",$(window).height() - $("header").height() - $("footer").height() - 2);
 
 	$("#right_column").css("width",$("#main").width()-270-20);
+
+	if(rc_height-header_height > 150) {
+		block_list_height = rc_height-header_height;
+		$(".block .list").css("height",rc_height-header_height);
+	}
 	
 	$(window).resize(function() {
-		$("#right_column").css("min-height",$(window).height() - $("header").height() - $("footer").height() - $("#right_column").css("border-top-width").substr(0,$("#right_column").css("border-top-width").length-2));
+		rc_height = $(window).height() - $("header").height() - $("footer").height() - $("#right_column").css("border-top-width").substr(0,$("#right_column").css("border-top-width").length-2);
+		$("#right_column").css("min-height",rc_height);
 		$("#left_column").css("min-height",$(window).height() - $("header").height() - $("footer").height() - 2);
 
 		$("#right_column").css("width",$("#main").width()-270-20);
+
+		if(rc_height-header_height > 150) {
+			block_list_height = rc_height-header_height;
+			$(".block .list").css("height",rc_height-header_height);
+		}
 	})
  
 //////	Scroll in blocks 	//////
+	$("#course-scroll, #subject-scroll, #section-scroll").css("height",block_list_height-15);
 	$( "#course-scroll" ).slider({
       orientation: "vertical",
       min: 0,
       max: 100,
       value: 100,
       slide: function( event, ui ) {
-      	if($("#course-ul").height() - 150 > 0) {
-      		var max_margin = $("#course-ul").height() - 150;
+      	if($("#course-ul").height() - block_list_height > 0) {
+      		var max_margin = $("#course-ul").height() - block_list_height;
       		$( "#course-ul" ).css("margin-top", (-max_margin*(100-ui.value)/100) + "px" );
       	}
       }
@@ -33,8 +48,8 @@ $(document).ready(function() {
       max: 100,
       value: 100,
       slide: function( event, ui ) {
-      	if($("#subject-ul").height() - 150 > 0) {
-      		var max_margin = $("#subject-ul").height() - 150;
+      	if($("#subject-ul").height() - block_list_height > 0) {
+      		var max_margin = $("#subject-ul").height() - block_list_height;
       		$( "#subject-ul" ).css("margin-top", (-max_margin*(100-ui.value)/100) + "px" );
       	}
       }
@@ -46,8 +61,8 @@ $(document).ready(function() {
       max: 100,
       value: 100,
       slide: function( event, ui ) {
-      	if($("#section-ul").height() - 150 > 0) {
-      		var max_margin = $("#section-ul").height() - 150;
+      	if($("#section-ul").height() - block_list_height > 0) {
+      		var max_margin = $("#section-ul").height() - block_list_height;
       		console.log(max_margin);
       		$( "#section-ul" ).css("margin-top", (-max_margin*(100-ui.value)/100) + "px" );
       	}
@@ -80,8 +95,8 @@ $(document).ready(function() {
 		    }
 	    }
 
-	    if($("#course-ul").height() - 150 > 0) {
-      		var max_margin = $("#course-ul").height() - 150;
+	    if($("#course-ul").height() - block_list_height > 0) {
+      		var max_margin = $("#course-ul").height() - block_list_height;
       		$( "#course-ul" ).css("margin-top", (-max_margin*(100-$( "#course-scroll" ).slider( "value"))/100) + "px" );
       	}
 	    this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
@@ -113,8 +128,8 @@ $(document).ready(function() {
 		    }
 	    }
 
-	    if($("#subject-ul").height() - 150 > 0) {
-      		var max_margin = $("#subject-ul").height() - 150;
+	    if($("#subject-ul").height() - block_list_height > 0) {
+      		var max_margin = $("#subject-ul").height() - block_list_height;
       		$( "#subject-ul" ).css("margin-top", (-max_margin*(100-$( "#subject-scroll" ).slider( "value"))/100) + "px" );
       	}
 	    this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
@@ -146,8 +161,8 @@ $(document).ready(function() {
 		    }
 	    }
 
-	    if($("#section-ul").height() - 150 > 0) {
-      		var max_margin = $("#section-ul").height() - 150;
+	    if($("#section-ul").height() - block_list_height > 0) {
+      		var max_margin = $("#section-ul").height() - block_list_height;
       		$( "#section-ul" ).css("margin-top", (-max_margin*(100-$( "#section-scroll" ).slider( "value"))/100) + "px" );
       	}
 	    this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;

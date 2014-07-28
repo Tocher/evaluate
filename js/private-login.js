@@ -1,9 +1,18 @@
 $(document).ready(function() {	
 	
-	$("#main-l").css("min-height",$(window).height() - $("header").height() - $("footer").height());
+	getMinHeight = function() {
+		var main_min_height = $(window).height() - $("header").height() - $("footer").height();
+		if(main_min_height < $("#login-form").height()+50)
+			return $("#login-form").height()+50;
+		else
+			return main_min_height;
+	}
+	
+	
+	$("#main-l").css("min-height",getMinHeight());
 	
 	$(window).resize(function() {
-		$("#main-l").css("min-height",$(window).height() - $("header").height() - $("footer").height());
+		$("#main-l").css("min-height",getMinHeight());
 	})
 
 	$(".plogin-form").validate({
