@@ -890,14 +890,16 @@ h2.section_header span {
 }
 
 #manage_staff{
-	width:69%;
+	display:inline-block;
+	vertical-align:top;
+	width:65%;
 	background: #fff;
-	padding: 15px 7px 80px 7px;
+	padding: 15px 7px 30px 7px;
 	box-shadow:0px 1px 2px #ccc;
 	margin-bottom:8px;
 }
 }
-#view_exam, #manage_staff h3 {
+#view_exam h3, #manage_staff h3 {
 	color:#555;
 	font-family: Raleway;
 	font-size: 14px;
