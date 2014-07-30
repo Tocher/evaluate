@@ -1,7 +1,7 @@
 $(document).ready(function() {	
 
 	var block_list_height = 150;
-	var header_height = 353;
+	var header_height = 313;
 //////	adapting column width 	//////
 	var rc_height = $(window).height() - $("header").height() - $("footer").height() - $("#right_column").css("border-top-width").substr(0,$("#right_column").css("border-top-width").length-2);
 	$("#right_column").css("min-height",rc_height);
@@ -679,23 +679,84 @@ var selected_exams = [];
 
 	});
 
+	$("#credits-amount").keyup(function() {
+		$("#credits-price").html("Rs. " + $(this).val());
+	});
+
+///////////////////// myprofile JS ///////////////////////////
+
+	$("#switch_to_manage_staff").click(function() {
+		$("#my_manage_profile").hide();
+		$("#my_manage_staff").fadeIn();
+		$(this).addClass("selected");
+		$("#switch_to_manage_profile").removeClass("selected");
+
+
+	});
+
+	$("#switch_to_manage_profile").click(function() {		
+		$("#my_manage_staff").hide();
+		$("#my_manage_profile").fadeIn();
+		$(this).addClass("selected");		
+		$("#switch_to_manage_staff").removeClass("selected");
+
+	});
+
+	// Manage Staff Edit Button
+	$(".profile_edit").click(function() {
+		var el = $(this).parent().parent();
+
+		$("#my_manage_staff").hide();
+		$("#my_manage_profile").fadeIn();
+		$(this).addClass("selected");		
+		$("#switch_to_manage_staff").removeClass("selected");
+
+		var vals = el.find('td');
+		for (var i = 0; i < vals.length; i++) {
+			if(i==2)
+			{
+				var name = $(vals[i]).html().split(" ");
+				$("#administrator_details_first_name").val(name[0]);
+				$("#administrator_details_last_name").val(name[1]);				
+			}
+			if(i==3)			
+				$("#administrator_details_email").val($(vals[i]).html());
+			if(i==4)
+				$("#administrator_details_mobile").val($(vals[i]).html());
+		};		
+
+	});
+
+	// Manage Staff Create Button
+	$("#create_profile").click(function() {
+
+		var fname = $("#create_profile_first_name").val();
+		var lname = $("#create_profile_last_name").val();
+		var email = $("#create_profile_email_name").val();
+		var mobile = $("#create_profile_mobile_name").val();
+		var id = $("#manage_staff tbody tr").size()+1;	
+		
+		$("#manage_staff tbody").append('<tr>'+
+			'<td><i class="fa fa-circle-thin"></i></td>'+
+			'<td>'+id+'</td>'+
+			'<td>'+fname+' '+lname+'</td>'+
+			'<td>'+email+'</td>'+
+			'<td style="font-family:arial;">'+mobile+'</td>'+
+			'<td><span class="profile_edit">Edit</span> <i class="fa fa-times-circle"></i></td>'+
+		'</tr>');		
+
+		$("#create_profile_first_name").val("");
+		$("#create_profile_last_name").val("");
+		$("#create_profile_email_name").val("");
+		$("#create_profile_mobile_name").val("");
+	});
+
 
 
 ////////////////////////// myprofile js //////////////////////
 
 
-
-/*	$("#switch_to_create_exam").click(function() {
-		$("#view_exam_tab").hide();
-		$("#create_exam_tab").fadeIn();
-	});
-
-	$("#switch_to_view_exam").click(function() {
-		$("#create_exam_tab").hide();
-		$("#view_exam_tab").fadeIn();
-	});  */
-
-var selected_exams = [];
+var selected_profiles = [];
 	// Remove row from exam view
 	$("#manage_staff td:last-child i").click(function() {
 		$(this).parent().parent().fadeOut(function(e) {
@@ -703,35 +764,32 @@ var selected_exams = [];
 		});
 	});
 	$("#manage_staff tbody tr").click(function() {
-		if($.inArray(this,selected_exams) === -1) {
+		if($.inArray(this,selected_profiles) === -1) {
 			$(this).find("td").first().find("i").removeClass("fa-circle-thin").addClass("fa-check-circle");
-			selected_exams.push(this);
+			selected_profiles.push(this);
 		}
 		else {			
 			$(this).find("td").first().find("i").removeClass("fa-check-circle").addClass("fa-circle-thin");
-			selected_exams.pop(this);
+			selected_profiles.pop(this);
 		}
-	});
-/*
-	//Remove Selected Exams
-	$("#delete_selected_exams").click(function() {
-		if(selected_exams.length == 0)
-			return;
-		for (var i = selected_exams.length - 1; i >= 0; i--) {
-			$(selected_exams[i]).fadeOut(function(i) {
-				console.log(i);
-				$(selected_exams[i]).remove();
-			});
-		};
-		selected_exams = [];
 	});
 
-	$(".exam-settings-change").click(function() {
-		if($(this).find('i').hasClass('fa-check-circle'))
-		{
-			$(this).find('i').removeClass('fa-check-circle').addClass('fa-circle-thin');
-		}
-		else
-			$(this).find('i').removeClass('fa-circle-thin').addClass('fa-check-circle');
-	});  */
+	//Remove Selected Profiles
+	$("#delete_selected_profiles").click(function() {
+		if(selected_profiles.length == 0)
+			return;
+		for (var i = selected_profiles.length - 1; i >= 0; i--) {
+			$(selected_profiles[i]).fadeOut(function(i) {
+				console.log(i);
+				$(selected_profiles[i]).remove();
+			});
+		};
+		selected_profiles = [];
+	});
+
+	//Update Profile
+	$("#update_manage_profile").click(function() {
+
+	});
+
 });

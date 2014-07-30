@@ -2,6 +2,7 @@
 <html>
 <head>
 	<title>Evaluate</title>
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 	<meta name="viewport" content="width=device-width,initial-scale=1.0">
 	<!--[if lt IE 9]>
 	    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
@@ -9,6 +10,7 @@
 	<!--[if lt IE 9]>
 	    <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
 	<![endif]-->
+	<link rel="stylesheet" type="text/css" href="css/style2.css">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
 	<link href='http://fonts.googleapis.com/css?family=PT+Sans' rel='stylesheet' type='text/css'>
@@ -24,11 +26,11 @@
 					<div class="date">20 June, Tuesday 12:05 PM</div>
 					<div class="user"><span>Welcome</span> James <i class="fa fa-power-off"></i><span class="tooltip">Log off</span></div>
 				</div>
-				<img src="img/img_right.png">
+				<img src="img/img_right.png" alt="">
 			</div>
 		</div>
 	</header>
-	<section id="main" class="row">
+	<section id="main" class="section_row">
 		<section id="left_column">
 			<table>
 				<tr data-tab="1">
@@ -93,7 +95,7 @@
 						</div>
 						<div class="block_current">
 							<span data-action="add">+</span>
-							<input type="text" id="input-course" class="course"></input>
+							<input type="text" id="input-course" class="course" />
 							<div class="state"><span>Active</span><div class="sub"><ul><li data-mark="1">Mark as active</li><li data-mark="0">Mark as inactive</li></ul></div></div>
 						</div>
 						<button class="disabled">Save</button>
@@ -115,7 +117,7 @@
 						</div>
 						<div class="block_current">
 							<span data-action="add">+</span>
-							<input type="text" id="input-subject" class="course"></input>
+							<input type="text" id="input-subject" class="course" />
 							<div class="state"><span>Active</span><div class="sub"><ul><li data-mark="1">Mark as active</li><li data-mark="0">Mark as inactive</li></ul></div></div>
 						</div>
 						<button class="disabled">Save</button>
@@ -137,7 +139,7 @@
 						</div>
 						<div class="block_current">
 							<span data-action="add">+</span>
-							<input type="text" id="input-section" class="course"></input>							
+							<input type="text" id="input-section" class="course" />						
 						</div>
 						<button class="disabled">Save</button>
 						<div class="remove disabled" data-ul="section-ul">Delete Section<i class="fa fa-times-circle"></i></div>
@@ -145,51 +147,51 @@
 				</div>
 			</section>
 
-			<section id="tab3">
-				
+			<section id="tab3">		
+				<section style="display:none;">		
 				<div class="column_head">
 					<span>Student manager</span>
 				</div>
 				<div class="row">
-					<div class="block block-course">
+					<div class="block block-batch">
 						<h2><span>1</span>Select Batch</h2>
 						<div class="search">
 							<i class="fa fa-search"></i><input type="text" placeholder="Search Batch">
 						</div>
 						<div class="list">
-							<ul id="course-ul">
+							<ul id="batch-ul">
 								<li>Marketing I</li>
 								<li>Marketing II</li>
 								<li>Art Div A</li>
 								<li>Art Div B</li>
 							</ul>
-							<div id="course-scroll"></div>
+							<div id="batch-scroll"></div>
 						</div>
 						<div class="block_current">
 							<span data-action="add">+</span>
-							<input type="text" id="input-course" class="course"></input>
+							<input type="text" id="input-batch" class="course" />
 							<div class="state"><span>Active</span><div class="sub"><ul><li data-mark="1">Mark as active</li><li data-mark="0">Mark as inactive</li></ul></div></div>
 						</div>
 						<button class="disabled">Save</button>
-						<div class="remove disabled" data-ul="course-ul">Delete Batch<i class="fa fa-times-circle"></i></div>
+						<div class="remove disabled" data-ul="batch-ul">Delete Batch<i class="fa fa-times-circle"></i></div>
 					</div>
-					<div class="block block-section">
+					<div class="block block-student">
 						<h2><span>2</span>Select Student</h2>
 						<div class="search">
 							<i class="fa fa-search"></i><input type="text" placeholder="Search Student">
 						</div>
 						<div class="list">
-							<ul id="section-ul">
+							<ul id="student-ul">
 								<li><i class="fa fa-circle-thin"></i>Satish Deshmukh</li>
 								<li>Architecture<span>Inactive</span></li>
 								<li>Web Design<span>Inactive</span></li>
 								<li>Medical<span>Inactive</span></li>
 							</ul>
-							<div id="section-scroll"></div>
+							<div id="student-scroll"></div>
 						</div>
 						<div class="block_current">
 							<span data-action="add">+</span>
-							<input type="text" id="input-section" class="course"></input>
+							<input type="text" id="input-student" class="course" />
 							<div class="state"><span>Active</span><div class="sub"><ul><li data-mark="1">Mark as active</li><li data-mark="0">Mark as inactive</li></ul></div></div>
 						</div>
 						<button class="disabled">Save</button>
@@ -201,23 +203,23 @@
 							<i class="fa fa-search"></i><input type="text" placeholder="Search Section">
 						</div>
 						<div class="list">
-							<ul id="section-ul">
+							<ul id="section-ul2">
 								<li><i class="fa fa-circle-thin"></i>Architecture</li>
 								<li><i class="fa fa-circle-thin"></i>Web Design</li>
 								<li><i class="fa fa-circle-thin"></i>Medical</li>
 								<li><i class="fa fa-circle-thin"></i>Arts</li>
 							</ul>
-							<div id="section-scroll"></div>
+							<div id="section-scroll2"></div>
 						</div>
 						<div class="block_current">
 							<span data-action="add">+</span>
-							<input type="text" id="input-section" class="course"></input>							
+							<input type="text" id="input-section2" class="course" />						
 						</div>
 						<button class="disabled">Save</button>
-						<div class="remove disabled" data-ul="section-ul">Delete Section<i class="fa fa-times-circle"></i></div>
+						<div class="remove disabled" data-ul="section-ul2">Delete Section<i class="fa fa-times-circle"></i></div>
 					</div>
 				</div>
-
+				</section>
 			</section>
 
 			<section id="tab4">
@@ -419,11 +421,11 @@
 										<th rowspan="2">Exam Name</th>
 										<th rowspan="2">Question Paper</th>
 										<th rowspan="2">Batch</th>
-										<th rowspan="2">Questions</th>
+										<th rowspan="2" style="padding: 10px 5px;">Questions</th>
 										<th rowspan="2">Duration</th>
-										<th rowspan="2">Marks/Q</th>
+										<th rowspan="2" style="padding: 10px 5px;">Marks/Q</th>
 										<th colspan="2" style="text-align:center;">Date &amp; Time</th>
-										<th rowspan="2">Attempted</th>
+										<th rowspan="2" style="padding: 10px 5px;">Attempted</th>
 										<th rowspan="2"></th>
 									</tr>
 									<tr>
@@ -444,7 +446,7 @@
 										<td>5th Jul, 10:00</td>
 										<td>10th Jul, 10:00</td>
 										<td>80/100</td>
-										<td>Edit <i class="fa fa-times-circle"></i></td>
+										<td><span>Edit</span> <i class="fa fa-times-circle"></i></td>
 									</tr>
 									<tr>
 										<td><i class="fa fa-circle-thin"></i></td>
@@ -458,7 +460,7 @@
 										<td>5th Jul, 10:00</td>
 										<td>10th Jul, 10:00</td>
 										<td>80/100</td>
-										<td>Edit <i class="fa fa-times-circle"></i></td>
+										<td><span>Edit</span> <i class="fa fa-times-circle"></i></td>
 									</tr>
 									<tr>
 										<td><i class="fa fa-circle-thin"></i></td>
@@ -472,7 +474,7 @@
 										<td>5th Jul, 10:00</td>
 										<td>10th Jul, 10:00</td>
 										<td>80/100</td>
-										<td>Edit <i class="fa fa-times-circle"></i></td>
+										<td><span>Edit</span> <i class="fa fa-times-circle"></i></td>
 									</tr>
 								</tbody>
 							</table>
@@ -490,7 +492,7 @@
 					<div class="column_head_right"><span id="switch_to_buy_credits" class="selected">Buy credits</span> | <span id="switch_to_purchase_history">Purchase History</span></div>
 				</div>
 				<div class="section_row">
-					<h2 class="section_header">Buy credits	<a class="registerbtn" href="#">Buy Credits</a></h2>
+					<h2 class="section_header">Buy credits	<a class="registerbtn" href="#" style="margin-right:0px;">Buy Credits</a></h2>
 				</div>	
 				<div style="position:relative;">	
 					<div class="packages-block">
@@ -504,21 +506,21 @@
 					<div class="buy-cred-block">
 						<div class="buy-cred-text-wrap">
 							<span class="medium-bold" style="float:left;">Buy credits</span>
-							<img src="img/excl-icon.png" id="credits-icon">
+							<img src="img/excl-icon.png" class="credits-icon" alt="">
 						</div>
 						<div id="credits-text1">Credits</div>
 						<input type="text"  placeholder="Number of credits" name="Amount" id="credits-amount"/>
 						<div id="credits-text2">Total amount</div>
 						<div id="credits-price">Rs. 20,000</div>
 						<div class="wrap">
-							<a id="total-credits" href="#">View Total Credits</a>
+							<a class="total-credits" href="#">View Total Credits</a>
 						</div>
 						<a class="buy-cred-btn" href="#">Buy Credits</a>					
 					</div>
 					<div class="purch-history-block">
 						<div class="buy-cred-text-wrap">
 							<span class="medium-bold" style="float:left;">Total credits</span>
-							<img src="img/excl-icon.png" id="credits-icon">
+							<img src="img/excl-icon.png" class="credits-icon" alt="">
 						</div>
 						<div class="wrap">
 							<div class="dot-block" style="border-color:#8e8e8e"><span> Total Credits </span><br> 225</div>
@@ -526,14 +528,237 @@
 							<div class="dot-block" style="border-color:#e68c8a"><span> Remaining </span><br> 25</div>
 						</div>
 						<div class="wrap">
-							<a id="total-credits" href="#">Purchase history</a>
+							<a class="total-credits" href="#">Purchase history</a>
 						</div>
 					<a class="buy-cred-btn" href="#">Buy Credits</a>
 					</div>
 				</div>
 			</section>
 			<section id="tab8">
-				Tab number 8
+				<section id="my_manage_staff">
+						<div class="column_head">
+							<span>My profile <i class="fa fa-angle-right"></i><div> Manage profile</div></span>
+							<div class="column_head_right"><span id="switch_to_manage_profile">Manage profile</span> | <span class="selected">Manage staff</span></div>
+						</div>
+						<div class="section_row">
+							<h2 class="section_header">Manage staff</h2>
+							<div id="manage_staff">
+								<div style="padding: 0 0 10px 0;"><span style="color:#757575; font-weight:500;">My staff</span></div>
+								<table class="table-bordered">
+									<thead>
+										<tr>
+											<th rowspan="2"><i class="fa fa-circle-thin"></i></th>
+											<th rowspan="2">#</th>
+											<th rowspan="2">Name</th>
+											<th rowspan="2" style="	width: 35%;">Email</th>
+											<th rowspan="2" style="	width: 19%;">Contact number</th>
+											<th rowspan="2" style="	width: 11%;"></th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td><i class="fa fa-circle-thin"></i></td>
+											<td>1</td>
+											<td>Satish Deshmukh</td>
+											<td>satishdeshmukh@gmail.com</td>
+											<td style="font-family:arial;">9890098909</td>
+											<td><span class="profile_edit">Edit</span> <i class="fa fa-times-circle"></i></td>
+										</tr>
+										<tr>
+											<td><i class="fa fa-circle-thin"></i></td>
+											<td>2</td>
+											<td>Raj Shekhar</td>
+											<td>raj_shekhar@yahoo.co.in</td>
+											<td style="font-family:arial;">9823459890</td>
+											<td><span class="profile_edit">Edit</span> <i class="fa fa-times-circle"></i></td>
+										</tr>
+										<tr>
+											<td><i class="fa fa-circle-thin"></i></td>
+											<td>3</td>
+											<td>James Banos</td>
+											<td>james.banos@gmail.com</td>
+											<td style="font-family:arial;">9824080980</td>
+											<td><span class="profile_edit">Edit</span> <i class="fa fa-times-circle"></i></td>
+										</tr>									<tr>
+											<td><i class="fa fa-circle-thin"></i></td>
+											<td>4</td>
+											<td>Paul Mcartney</td>
+											<td>paulmcartney@yahoo.com</td>
+											<td style="font-family:arial;">9764808980</td>
+											<td><span class="profile_edit">Edit</span> <i class="fa fa-times-circle"></i></td>
+										</tr>									<tr>
+											<td><i class="fa fa-circle-thin"></i></td>
+											<td>5</td>
+											<td>Shriram Iyer</td>
+											<td>satishdeshmukh@gmail.com</td>
+											<td style="font-family:arial;">9881989890</td>
+											<td><span class="profile_edit">Edit</span> <i class="fa fa-times-circle"></i></td>
+										</tr>									<tr>
+											<td><i class="fa fa-circle-thin"></i></td>
+											<td>6</td>
+											<td>Raj Shekhar</td>
+											<td>raj_shekhar@yahoo.co.in</td>
+											<td style="font-family:arial;">9890098909</td>
+											<td><span class="profile_edit">Edit</span> <i class="fa fa-times-circle"></i></td>
+										</tr>									<tr>
+											<td><i class="fa fa-circle-thin"></i></td>
+											<td>7</td>
+											<td>James Banos</td>
+											<td>james.banos@gmail.com</td>
+											<td style="font-family:arial;">9823459890</td>
+											<td><span class="profile_edit">Edit</span> <i class="fa fa-times-circle"></i></td>
+										</tr>									<tr>
+											<td><i class="fa fa-circle-thin"></i></td>
+											<td>8</td>
+											<td>Paul Mcartney</td>
+											<td>paulmcartney@yahoo.com</td>
+											<td style="font-family:arial;">9824080980</td>
+											<td><span class="profile_edit">Edit</span> <i class="fa fa-times-circle"></i></td>
+										</tr>									<tr>
+											<td><i class="fa fa-circle-thin"></i></td>
+											<td style="font-family:arial;">9</td>
+											<td>Satish Deshmukh</td>
+											<td>satishdeshmukh@gmail.com</td>
+											<td style="font-family:arial;">9764808980</td>
+											<td><span class="profile_edit">Edit</span> <i class="fa fa-times-circle"></i></td>
+										</tr>									<tr>
+											<td><i class="fa fa-circle-thin"></i></td>
+											<td>10</td>
+											<td>Raj Shekhar</td>
+											<td>raj_shekhar@yahoo.co.in</td>
+											<td style="font-family:arial;">9881989890</td>
+											<td><span class="profile_edit">Edit</span> <i class="fa fa-times-circle"></i></td>
+										</tr>
+										<tr>
+											<td><i class="fa fa-circle-thin"></i></td>
+											<td>11</td>
+											<td>James Harding</td>
+											<td>jamesharding@gmail.com</td>
+											<td style="font-family:arial;">9890098909</td>
+											<td><span class="profile_edit">Edit</span> <i class="fa fa-times-circle"></i></td>
+										</tr>
+									</tbody>
+								</table>
+								<div class="registerbtn" id="delete_selected_profiles">Delete Selected</div>
+							
+							</div>
+							<div id="create-new-staff">
+								<div style="margin:15px 0;">
+									<span style="color: #757575;font-weight: 500; ">Create new stuff</span>
+								</div>
+								<table class="table-bordered"  style="width:100%">
+									<tbody>	
+										<tr>
+											<td class="left-column">First name*</td>
+											<td class="right-column" ><input type="text" id="create_profile_first_name" /></td>
+										</tr>
+										<tr>
+											<td class="left-column">Last name*</td>
+											<td class="right-column" ><input type="text" id="create_profile_last_name" /></td>
+										</tr>
+										<tr>
+											<td class="left-column">Email*</td>
+											<td class="right-column" ><input type="email" id="create_profile_email_name" /></td>
+										</tr>	
+										<tr>
+											<td class="left-column">Mobile</td>
+											<td class="right-column" ><input type="text" id="create_profile_mobile_name" /></td>
+										</tr>
+									</tbody>				
+								</table>
+								<div class="registerbtn" id="create_profile">Create</div>
+						
+							</div>			
+
+							
+						</div>
+					</section>				
+					<section id="my_manage_profile">
+						<div class="column_head">
+							<span>My profile <i class="fa fa-angle-right"></i><div> Manage staff</div></span>
+							<div class="column_head_right"><span class="selected" >Manage profile</span> | <span id="switch_to_manage_staff">Manage staff</span></div>
+						</div>
+						<div class="section_row">
+							<h2 class="section_header">Manage profile</h2>
+							<div id="administrator_details">
+								<div style="margin:15px 0;">
+									<span style="color: #757575;font-weight: 500;font-size:18px; ">Administrator details</span>
+								</div>
+								<table class="table-bordered"  style="width:100%">
+									<tbody>	
+										<tr>
+											<td class="left-column">First name*</td>
+											<td class="right-column" ><input type="text" id="administrator_details_first_name" value="Anil" /></td>
+										</tr>
+										<tr>
+											<td class="left-column">Last name*</td>
+											<td class="right-column" ><input type="text" id="administrator_details_last_name" value="Joshi" /></td>
+										</tr>
+										<tr>
+											<td class="left-column">Email*</td>
+											<td class="right-column" ><input type="text" id="administrator_details_email" value="aniljoshi@gmail.com" /></td>
+										</tr>	
+										<tr>
+											<td class="left-column">Mobile</td>
+											<td class="right-column" ><input type="text" id="administrator_details_mobile" value="9881898198" /></td>
+										</tr>
+									</tbody>				
+								</table>
+							</div>
+							<div id="institute_details">
+								<div style="margin:15px 0;">
+									<span style="color: #757575;font-weight: 500;font-size:18px; ">Institute Details</span>
+								</div>
+								<table class="table-bordered"  style="width:100%">
+									<tbody>	
+										<tr>
+											<td class="left-column">Name*</td>
+											<td class="right-column" ><input type="text" id="institute_d_name" value="Joshi institute" /></td>
+										</tr>
+										<tr>
+											<td class="left-column">Address*</td>
+											<td class="right-column" ><textarea id="institute_d_address" rows="4"> 1/12, NCL Housing Society, Panchavati, Pashan Road, Pune - 411008</textarea></td>
+										</tr>
+										<tr>
+											<td class="left-column">Contact number*</td>
+											<td class="right-column" ><input type="text" id="institute_d_number" value="9881898198" /></td>
+										</tr>	
+										<tr>
+											<td class="left-column">Description</td>
+											<td class="right-column" ><textarea id="institute_d_description" rows="3"></textarea></td>
+										</tr>
+										<tr>
+											<td class="left-column">Update logo</td>
+											<td class="right-column" ><div><a class="update-logo" href="#"></a></div></td>
+										</tr>	
+									</tbody>				
+								</table>								
+							</div>	
+							<div id="change_pass">
+								<div style="margin:15px 0;">
+									<span style="color: #757575;font-weight: 500;font-size:18px; ">Change password</span>
+								</div>
+								<table class="table-bordered" style="width:100%">
+									<tbody>	
+										<tr>
+											<td class="left-column">Old Password*</td>
+											<td class="right-column" ><input type="password" id="change_pass_old" value="asdasd" /></td>
+										</tr>
+										<tr>
+											<td class="left-column">New Password*</td>
+											<td class="right-column" ><input type="password" id="change_pass_new" value="asdasd" /></td>
+										</tr>
+										<tr>
+											<td class="left-column">Re-type Password*</td>
+											<td class="right-column" ><input type="password" id="change_pass_new2" value="asdasd" /></td>
+										</tr>	
+									</tbody>				
+								</table>						
+							</div>							
+							<div class="registerbtn" id="update_manage_profile">Update</div>
+							
+						</div>
+					</section>	
 			</section>
 			<section id="tab9">
 				Tab number 9
@@ -542,7 +767,7 @@
 	</section>
 	<footer>
 		<div class="row">
-			&copy 2014. Evaluate. All rights reserved
+			&copy; 2014. Evaluate. All rights reserved
 		</div>
 	</footer>
 

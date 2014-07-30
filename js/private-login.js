@@ -2,10 +2,18 @@ $(document).ready(function() {
 	
 	getMinHeight = function() {
 		var main_min_height = $(window).height() - $("header").height() - $("footer").height();
-		if(main_min_height < $("#login-form").height()+50)
-			return $("#login-form").height()+50;
-		else
-			return main_min_height;
+		if($("#login-form") !== undefined) {
+			if(main_min_height < $("#login-form").height()+50)
+				return $("#login-form").height()+50;
+			else
+				return main_min_height;
+		}
+		else {
+			if(main_min_height < $("#reg-form").height()+50)
+				return $("#reg-form").height()+50;
+			else
+				return main_min_height;
+		}
 	}
 	
 	

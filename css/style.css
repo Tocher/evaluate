@@ -640,6 +640,22 @@ footer {
 	background:rgba(0,0,0,0.5);
  
  }
+  #reg-form {		
+	display: block;
+	position:absolute;
+	left:50%;
+	width:420px;
+	margin-left:-210px;	
+	height:476px;	
+	margin-top:2%;
+	background:url(../img/login-background.png);
+	
+	border: 10px solid;
+	border-color: rgba(185, 185, 185, 0.5);
+	border-radius: 15px;
+	background-clip: padding-box;
+	
+}
  #login-form {		
 	display: block;
 	position:absolute;
@@ -892,9 +908,9 @@ h2.section_header span {
 #manage_staff{
 	display:inline-block;
 	vertical-align:top;
-	width:65%;
+	width:64%;
 	background: #fff;
-	padding: 15px 7px 30px 7px;
+	padding: 15px 10px 30px 10px;
 	box-shadow:0px 1px 2px #ccc;
 	margin-bottom:8px;
 }
@@ -969,7 +985,7 @@ h2.section_header a {
 	 margin-right: 0;
 	 cursor: pointer;
 }
-#view_exam tbody td:last-child:hover , #manage_staff tbody td:last-child:hover {
+#view_exam tbody td:last-child i:hover , #manage_staff tbody td i:last-child:hover, #view_exam tbody td:last-child span:hover , #manage_staff tbody td span:last-child:hover {
 	color: #d9524c;
 	cursor: pointer;
 }
@@ -1005,6 +1021,7 @@ h2.section_header a {
 .table-bordered > thead > tr > th:last-child,
 .table-bordered > tbody > tr > th:last-child {
 	border-right: none;
+	min-width: 50px;
 }
 .table-bordered > tbody > tr:last-child > th,
 .table-bordered > tbody > tr:last-child > td {
@@ -1220,7 +1237,6 @@ h2.section_header a {
 	display:inline-block;
 	width:62%;
 	background:#fff;
-	height:250px;
 	margin:15px 2.5%;
 	box-shadow:0px 1px 2px #ccc;
 	float:left;
@@ -1233,7 +1249,6 @@ h2.section_header a {
 	display:inline-block;
 	width:28%;
 	background:#fff;
-	height:250px;
 	margin:15px 0;
 	box-shadow:0px 1px 2px #ccc;
 	padding:10px;
@@ -1278,10 +1293,10 @@ h2.section_header a {
 	display:block;
 	width:30.5%;
 	background:#fff;
-	height:70%;
 	border:1px solid #e1e1e1;
-	margin:10px 1%;
-	float:left;
+	margin: 10px 4px;
+	display: inline-block;
+	vertical-align: top;
 }
 
 .students-wrap{
@@ -1312,12 +1327,11 @@ h2.section_header a {
 }
 .description-wrap{
 	display:block;
-	width:100%;
-	height:36%;
 	background-color:#fff;
 	font-size:13px;
 	text-align:center;
 	color:#555555;
+	padding:5px;
 }
 
 .buy-cred-text-wrap{
@@ -1331,7 +1345,7 @@ h2.section_header a {
 	padding: 0 2%;
 	line-height: 50px;
 }
-#credits-icon{ 
+.credits-icon{ 
 	float:right; 
 	margin: 7% 1.5% 0 0;	
 }
@@ -1366,7 +1380,7 @@ h2.section_header a {
 	background-color: #fff;
 	background-image: none;
 	border: 1px solid #ccc;
-	padding: 1px;
+	padding: 0px 1px;
 	padding-left: 3%;
 	border-radius: 0 0 0 5px;
 	line-height:38px;
@@ -1415,7 +1429,7 @@ h2.section_header a {
 
 }
 
-#total-credits {
+.total-credits {
 	text-decoration:none;
 	font-size:13px;
 	color:#999999;
@@ -1469,4 +1483,19 @@ h2.section_header a {
 	font-weight: 500;
 	line-height:28px;
 
+}
+#my_manage_profile {
+	display: none;
+}
+#delete_selected_profiles {
+	font-size: 14px;
+	padding: 5px 10px;
+	width: 130px;
+	line-height: 20px;
+}
+#create_profile {
+	font-size: 14px;
+	padding: 5px 10px;
+	width: 100px;
+	line-height: 20px;	
 }

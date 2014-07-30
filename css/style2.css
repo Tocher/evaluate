@@ -20,6 +20,21 @@
 	padding:15px;
 	
 }
+#create-new-staff table {
+	font-size: 13px;
+}
+#create-new-staff table input {
+	border: 0;
+}
+#my_manage_profile table {
+	border-radius: 5px;
+}
+#my_manage_profile table input, #my_manage_profile table textarea {
+	border: 0;
+	font-family: 'Raleway', sans-serif;
+	padding: 5px;
+}
+
 #create-new-staff  h3{
 	color:#555;
 	font-family: Raleway;
@@ -47,10 +62,11 @@
 	cursor: pointer;
 }
 
-
+#administrator_details, #institute_details, #change_pass{
+	min-width: 350px;
+}
 #administrator_details{
 	width:29%;
-	height:350px;
 	display:inline-block;
 	vertical-align:top;
 	background:#fff;
@@ -66,7 +82,6 @@
 	font-size:13px;
 	font-family:Raleway;
 	width:29%;
-	height:350px;
 	display:inline-block;
 	vertical-align:top;
 	background:#fff;
@@ -77,7 +92,6 @@
 }
 #change_pass{
 	width:29%;
-	height:350px;
 	display:inline-block;
 	vertical-align:top;
 	background:#fff;
@@ -93,4 +107,17 @@
 	height:34px;
 	width:34px;
 	background:url(../img/update-logo.png);
+	margin-top: -1px;
+	margin-right: -1px;
+	margin-bottom: -2px;
+}
+.profile_edit:hover {
+	color: #d9524c;
+}
+#update_manage_profile {
+	margin-bottom: 20px;
+	padding: 5px;
+	width: 100px;
+	font-size: 14px;
+	line-height: 23px;
 }
