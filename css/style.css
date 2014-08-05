@@ -293,7 +293,7 @@ table {
 	box-shadow: 0px 1px 2px #ccc;
 	padding-bottom: 10px;
 }
-.block-subject, .block-section {
+.block-subject, .block-section, .block-student, .block-add-student, .block-bulk-upload {
 	display: none;
 }
 .block-exam {
@@ -372,7 +372,6 @@ table {
 	border-bottom: 1px solid #dadada;
 }	
 .block ul li.selected {
-	border:none !important;
 	background: #fffdd2;
 }
 .block ul li span {
@@ -431,6 +430,11 @@ table {
 	display: inline-block;
 	vertical-align: middle;
 	font-size:14px;
+}
+.block_current .state.batch {
+	position: absolute;
+	float: none;
+	right: 10px;
 }
 .block_current .course {
 	width: 120px;
@@ -517,7 +521,7 @@ table {
 	color: #a7a7a7 !important;
 }
 
-#course-scroll, #subject-scroll, #section-scroll {
+#course-scroll, #subject-scroll, #section-scroll, #batch-scroll, #student-scroll {
 	height: 135px;
 	display: inline-block;
 	vertical-align: top;
@@ -952,7 +956,7 @@ h2.section_header a {
 }
 
 
-#view_exam table, #manage_staff table, .questions-table table{
+#view_exam table, #manage_staff table, .questions-table table {
 	width: 100%;
 	max-width: 100%;
 	border: 1px solid #e2e2e2;
@@ -967,8 +971,8 @@ h2.section_header a {
 #view_exam table i , #manage_staff table i, .questions-table table i {
 	font-size: 18px;
 }
-#view_exam table thead tr:first-child th:first-child, #manage_staff table thead tr:first-child th:first-child, .questions-table table thead tr:first-child th:first-child, 
-#view_exam table td:first-child, #manage_staff table td:first-child , .questions-table  table td:first-child{
+#view_exam table thead tr:first-child th:first-child, #manage_staff table thead tr:first-child th:first-child, .questions-table table thead tr:first-child th:first-child,
+#view_exam table td:first-child, #manage_staff table td:first-child, .questions-table table td:first-child {
 	text-align: center;
 }
 #view_exam table i.fa-circle-thin, #manage_staff table i.fa-circle-thin, .questions-table table i.fa-circle-thin{
@@ -989,18 +993,18 @@ h2.section_header a {
 	background: #fff;
 	padding:5px 10px;
 }
-#view_exam table tr:hover td, #manage_staff table tr:hover td , .questions-table table tr:hover td{
+#view_exam table tr:hover td, #manage_staff table tr:hover td, .questions-table table tr:hover td {
 	background: #f1f1f1;
 	cursor: pointer;
 }
-#view_exam .registerbtn, #manage_staff .registerbtn , .questions-table .registerbtn {
+#view_exam .registerbtn, #manage_staff .registerbtn, .questions-table .registerbtn {
 	 padding: 7px 13px;
 	 border-radius: 5px;
 	 margin-top:20px;
 	 margin-right: 0;
 	 cursor: pointer;
 }
-#view_exam tbody td:last-child:hover , #manage_staff tbody td:last-child:hover, .questions-table tbody td:last-child:hover{
+#view_exam tbody td:last-child:hover , #manage_staff tbody td:last-child:hover, .questions-table tbody td:last-child:hover {
 	color: #d9524c;
 	cursor: pointer;
 }
@@ -1014,6 +1018,9 @@ h2.section_header a {
 }
 .table td {
 	padding:10px;
+}
+.table-radius {
+	border-radius: 5px;
 }
 .table-bordered {
   border: 1px solid #e2e2e2;
@@ -1488,7 +1495,7 @@ h2.section_header a {
 
 .dot-block{
 	display: inline-block;
-	width: 21%;
+	width: 22%;
 	margin-left: 2%;
 	font-size: 18px;
 	font-family: Arial;
@@ -1499,7 +1506,7 @@ h2.section_header a {
 	border: 2px dashed #ccc;
 	padding: 10px;
 	line-height: 16px;
-	vertical-align:top;
+	float:left;
 	text-align:center;
 	
 }
@@ -1529,4 +1536,75 @@ h2.section_header a {
 	font-size: 13px;
 	color:#555;
 	font-family: Raleway;
+}
+
+.bulk_upload_file {
+	border:1px solid #ccc;
+	border-radius: 5px;
+	margin: 10px;
+}
+.bulk_upload_input {
+	display: table-cell;
+	width: 60%;
+}
+.bulk_upload_input input {
+	padding: 10px;
+	border:0;	
+	border-radius: 5px;
+	width: 85%;
+	color: #999999;
+	font-size: 13px;
+}
+.bulk_upload_btn {
+	display: table-cell;
+	font-size: 13px;
+	text-align: center;
+	font-weight: bold;
+	width: 40%;
+	color:#fff;
+	background: #b4b4b4;
+	background: linear-gradient(#b4b4b4 50%, #afafaf 50%);
+}
+.bulk_upload_btn:hover {
+	cursor: pointer;
+	background: #afafaf;
+}
+
+.bulk_upload {
+	border:1px solid #9a9a9a;
+	border-radius: 5px;
+	display: inline-block;
+	vertical-align: middle;
+	line-height: 30px;
+	float: right;
+	cursor: pointer;
+}
+.bulk_upload_i {
+	background: #a0a0a0;
+	color: #fff;
+	text-align: center;
+}
+.bulk_upload_i, .bulk_upload_text {
+	display: table-cell;
+	padding: 0px 10px;
+}
+.bulk_upload_text {
+	color: #333333;
+	font-weight: bold;
+	font-size: 13px;
+	background: #fff;
+	border-bottom-right-radius: 5px;
+	border-top-right-radius: 5px;
+}
+
+#studentBulkUpload-btnUpdate {
+	margin-right: 10px;
+	padding: 10px 5px;
+	width: 95px;
+	font-size: 13px;
+	height: 15px;
+}
+.wrap::before, .wrap::after {
+	display: table;
+	content: " ";
 }
