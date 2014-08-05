@@ -927,7 +927,7 @@ h2.section_header span {
 	margin-bottom:8px;
 }
 }
-#view_exam h3, #manage_staff h3 {
+#view_exam h3, #manage_staff h3, .questions-table h3 {
 	color:#555;
 	font-family: Raleway;
 	font-size: 14px;
@@ -952,7 +952,7 @@ h2.section_header a {
 }
 
 
-#view_exam table, #manage_staff table {
+#view_exam table, #manage_staff table, .questions-table table{
 	width: 100%;
 	max-width: 100%;
 	border: 1px solid #e2e2e2;
@@ -964,43 +964,43 @@ h2.section_header a {
 	font-family: Raleway;
 	font-size: 14px;
 }
-#view_exam table i , #manage_staff table i {
+#view_exam table i , #manage_staff table i, .questions-table table i {
 	font-size: 18px;
 }
-#view_exam table thead tr:first-child th:first-child, #manage_staff table thead tr:first-child th:first-child,
-#view_exam table td:first-child, #manage_staff table td:first-child {
+#view_exam table thead tr:first-child th:first-child, #manage_staff table thead tr:first-child th:first-child, .questions-table table thead tr:first-child th:first-child, 
+#view_exam table td:first-child, #manage_staff table td:first-child , .questions-table  table td:first-child{
 	text-align: center;
 }
-#view_exam table i.fa-circle-thin, #manage_staff table i.fa-circle-thin{
+#view_exam table i.fa-circle-thin, #manage_staff table i.fa-circle-thin, .questions-table table i.fa-circle-thin{
 	color:#636363;
 }
-#view_exam table i.fa-check-circle, #manage_staff table i.fa-check-circle{
+#view_exam table i.fa-check-circle, #manage_staff table i.fa-check-circle, .questions-table table i.fa-check-circle{
 	color: #47a746;
 }
-#view_exam table i.fa-pencil , #manage_staff table i.fa-pencil {
+#view_exam table i.fa-pencil , #manage_staff table i.fa-pencil, .questions-table table i.fa-pencil {
 	margin-right: 5px;
 }
-#view_exam table th, #manage_staff table th {
+#view_exam table th, #manage_staff table th, .questions-table table th {
 	text-align: left;
 	background: #f7f7f7;
 	padding:10px;
 }
-#view_exam table td , #manage_staff table td {
+#view_exam table td , #manage_staff table td, .questions-table table td {
 	background: #fff;
 	padding:5px 10px;
 }
-#view_exam table tr:hover td, #manage_staff table tr:hover td {
+#view_exam table tr:hover td, #manage_staff table tr:hover td , .questions-table table tr:hover td{
 	background: #f1f1f1;
 	cursor: pointer;
 }
-#view_exam .registerbtn, #manage_staff .registerbtn {
+#view_exam .registerbtn, #manage_staff .registerbtn , .questions-table .registerbtn {
 	 padding: 7px 13px;
 	 border-radius: 5px;
 	 margin-top:20px;
 	 margin-right: 0;
 	 cursor: pointer;
 }
-#view_exam tbody td:last-child:hover , #manage_staff tbody td:last-child:hover {
+#view_exam tbody td:last-child:hover , #manage_staff tbody td:last-child:hover, .questions-table tbody td:last-child:hover{
 	color: #d9524c;
 	cursor: pointer;
 }
@@ -1488,7 +1488,7 @@ h2.section_header a {
 
 .dot-block{
 	display: inline-block;
-	width: 22%;
+	width: 21%;
 	margin-left: 2%;
 	font-size: 18px;
 	font-family: Arial;
@@ -1499,7 +1499,7 @@ h2.section_header a {
 	border: 2px dashed #ccc;
 	padding: 10px;
 	line-height: 16px;
-	float:left;
+	vertical-align:top;
 	text-align:center;
 	
 }
