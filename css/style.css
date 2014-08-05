@@ -359,13 +359,14 @@ table {
 	vertical-align: top;
 }
 .block ul li {
-	min-height: 35px;
+	height: 35px;
 	line-height: 35px;	
 	padding-left:20px;
 	color: #565656;
 	font-size:14px;
 	font-weight: 500;
 	cursor: pointer;
+	overflow: hidden;
 }
 .block ul li:not(:last-child) {
 	border-bottom: 1px solid #dadada;
@@ -464,13 +465,13 @@ table {
 	color: #666;
 	font-size: 12px;
 	float: right;
-	margin-right: 25px;
+	padding-right: 25px;
 	position: relative;
 }
 .block_current .state::after {
 	content: ''; 
 	position: absolute; /* Абсолютное позиционирование */
-	right: -25px;top: 21px;
+	right: 0px;top: 21px;
 	border: 7px solid transparent; /* Прозрачные границы */
 	border-top: 7px solid #565553; /* Добавляем треугольник */
 }
@@ -640,7 +641,7 @@ footer {
 	background:rgba(0,0,0,0.5);
  
  }
-  #reg-form {		
+.reg-form {
 	display: block;
 	position:absolute;
 	left:50%;
@@ -656,7 +657,7 @@ footer {
 	background-clip: padding-box;
 	
 }
- #login-form {		
+.plogin-form {
 	display: block;
 	position:absolute;
 	left:50%;
@@ -804,8 +805,19 @@ footer {
 	margin-left: 14%;
 	height: 40px;
 	margin-top:10px;
+	line-height: 14px;
+	position: relative;
 }
-	
+#restore-form input, #restore-form span{
+	vertical-align: middle;
+}
+#restore-form label {
+	position: absolute;
+	top: 25px;
+	font-size: 12px;
+	color: rgb(233, 15, 15);
+}
+
 #rest-pass{
 	display:block;
 	float:right;
@@ -819,7 +831,7 @@ footer {
 	text-decoration: underline;
 }
 
-#login-btn{
+.login-btn{
 	display:block;
 	width:45%;
 	height:11%;
@@ -837,7 +849,7 @@ footer {
 	
 }	
 
-#login-btn:hover{
+.login-btn:hover{
 	background:#da534f;
 }
 
@@ -915,7 +927,7 @@ h2.section_header span {
 	margin-bottom:8px;
 }
 }
-#view_exam h3, #manage_staff h3 {
+#view_exam h3, #manage_staff h3, .questions-table h3 {
 	color:#555;
 	font-family: Raleway;
 	font-size: 14px;
@@ -933,14 +945,14 @@ h2.section_header a {
 	margin-top: -10px;
 }
 
-#login-btn:active{
+.login-btn:active{
 	background:linear-gradient(#428bca 50%, #3984c5 50%);
 	border-color:#397fba;
 	margin:15px auto;   		
 }
 
 
-#view_exam table, #manage_staff table {
+#view_exam table, #manage_staff table, .questions-table table{
 	width: 100%;
 	max-width: 100%;
 	border: 1px solid #e2e2e2;
@@ -952,40 +964,43 @@ h2.section_header a {
 	font-family: Raleway;
 	font-size: 14px;
 }
-#view_exam table i , #manage_staff table i {
+#view_exam table i , #manage_staff table i, .questions-table table i {
 	font-size: 18px;
 }
-#view_exam table thead tr:first-child th:first-child, #manage_staff table thead tr:first-child th:first-child,
-#view_exam table td:first-child, #manage_staff table td:first-child {
+#view_exam table thead tr:first-child th:first-child, #manage_staff table thead tr:first-child th:first-child, .questions-table table thead tr:first-child th:first-child, 
+#view_exam table td:first-child, #manage_staff table td:first-child , .questions-table  table td:first-child{
 	text-align: center;
 }
-#view_exam table i.fa-circle-thin, #manage_staff table i.fa-circle-thin{
+#view_exam table i.fa-circle-thin, #manage_staff table i.fa-circle-thin, .questions-table table i.fa-circle-thin{
 	color:#636363;
 }
-#view_exam table i.fa-check-circle, #manage_staff table i.fa-check-circle{
+#view_exam table i.fa-check-circle, #manage_staff table i.fa-check-circle, .questions-table table i.fa-check-circle{
 	color: #47a746;
 }
-#view_exam table th, #manage_staff table th {
+#view_exam table i.fa-pencil , #manage_staff table i.fa-pencil, .questions-table table i.fa-pencil {
+	margin-right: 5px;
+}
+#view_exam table th, #manage_staff table th, .questions-table table th {
 	text-align: left;
 	background: #f7f7f7;
 	padding:10px;
 }
-#view_exam table td , #manage_staff table td {
+#view_exam table td , #manage_staff table td, .questions-table table td {
 	background: #fff;
 	padding:5px 10px;
 }
-#view_exam table tr:hover td, #manage_staff table tr:hover td {
+#view_exam table tr:hover td, #manage_staff table tr:hover td , .questions-table table tr:hover td{
 	background: #f1f1f1;
 	cursor: pointer;
 }
-#view_exam .registerbtn, #manage_staff .registerbtn {
+#view_exam .registerbtn, #manage_staff .registerbtn , .questions-table .registerbtn {
 	 padding: 7px 13px;
 	 border-radius: 5px;
 	 margin-top:20px;
 	 margin-right: 0;
 	 cursor: pointer;
 }
-#view_exam tbody td:last-child i:hover , #manage_staff tbody td i:last-child:hover, #view_exam tbody td:last-child span:hover , #manage_staff tbody td span:last-child:hover {
+#view_exam tbody td:last-child:hover , #manage_staff tbody td:last-child:hover, .questions-table tbody td:last-child:hover{
 	color: #d9524c;
 	cursor: pointer;
 }
@@ -1113,6 +1128,13 @@ h2.section_header a {
 	border:none;
 	padding: 10px;
 	color: #555;
+	font-family: Raleway;
+	font-size: 13px;
+}
+.table-settings-exam input {
+	color: #555;
+	font-family: Raleway;
+	font-size: 13px;
 }
 .table-settings-exam tr td:first-child {
 	width:30%;
@@ -1169,6 +1191,7 @@ h2.section_header a {
 }
 .table-settings-exam .pull-right-10 {
 	float: right;
+	cursor: pointer;
 }
 .table-settings-exam tr:last-child td:last-child {
 	padding: 0;
@@ -1181,7 +1204,10 @@ h2.section_header a {
 	color: #757575;
 	font-size: 14px;
 	display: inline-block;
-	margin-right: 14%;
+}
+.grade_input {
+	width: 14%;
+	padding: 8px 0px;
 }
 .exam-btn {
 	margin-top:20px;
@@ -1350,7 +1376,7 @@ h2.section_header a {
 	margin: 7% 1.5% 0 0;	
 }
 
-#credits-text1{
+.credits-text1{
 	display: inline-block;
 	width: 33%;
 	margin-left: 5%;
@@ -1368,7 +1394,7 @@ h2.section_header a {
 	line-height:36px;
 	float:left;
 }
-#credits-text2{
+.credits-text2{
 	display: inline-block;
 	width: 33%;
 	margin-left: 5%;
@@ -1389,7 +1415,7 @@ h2.section_header a {
 
 }
 
-#credits-amount{
+.credits-amount{
 	display: inline-block;
 	float:left;
 	width: 52%;
@@ -1408,7 +1434,7 @@ h2.section_header a {
 
 }
 
-#credits-price{
+.credits-price{
 	display: inline-block;
 	float:left;
 	width: 52%;
@@ -1462,7 +1488,7 @@ h2.section_header a {
 
 .dot-block{
 	display: inline-block;
-	width: 22%;
+	width: 21%;
 	margin-left: 2%;
 	font-size: 18px;
 	font-family: Arial;
@@ -1473,7 +1499,7 @@ h2.section_header a {
 	border: 2px dashed #ccc;
 	padding: 10px;
 	line-height: 16px;
-	float:left;
+	vertical-align:top;
 	text-align:center;
 	
 }
@@ -1487,15 +1513,20 @@ h2.section_header a {
 #my_manage_profile {
 	display: none;
 }
-#delete_selected_profiles {
+#myStaff_btnDeleteSelected {
 	font-size: 14px;
 	padding: 5px 10px;
 	width: 130px;
 	line-height: 20px;
 }
-#create_profile {
+#createNewStaff-btnCreate {
 	font-size: 14px;
 	padding: 5px 10px;
 	width: 100px;
 	line-height: 20px;	
+}
+.right-column {
+	font-size: 13px;
+	color:#555;
+	font-family: Raleway;
 }

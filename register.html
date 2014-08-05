@@ -23,45 +23,42 @@
 			<a href="#" class="logo">evaluate</a>
 			<div class="pull-right-d">
 				<a class="registerbtn" href="#">Register</a>
-				<a class="signinbtn" href="#">Sign In <br> <span class="signin-little">	if you are already registered</span></a>
-				
+				<a class="signinbtn" href="#">Sign In <br> <span class="signin-little">	if you are already registered</span></a>				
 			</div>
 		</div>
 	</header>
 	<section id="main-l">
 			<div id="shade"></div>
-				<form id="reg-form" class="reg-form">
-					<p id="login-headline">Free Sign Up</p>
-					<div class="form-group">
-						<input class="form1" type="text" placeholder="Name" name="name" required>
-					</div>
-					<div class="form-group">
-						<input class="form2" type="email" placeholder="Email" name="email" required>
-					</div>
-					<div class="form-group">
-						<input class="form2" type="password" placeholder="Password" name="password" required>
-					</div>
-					<div class="form-group">
-						<input class="form2" type="text" placeholder="Number" name="number" required>	
-					</div>
-					<div class="form-group">
-						<input class="form2" type="text" placeholder="Organisation name" name="orgname" required>					
-					</div>
-					<div class="form-group">
-						<input class="form3" type="text" placeholder="Choose sub domain" id="subdomain" name="subdomain" required>
-						<span style="display:none;position:absolute;right:90px;top:10px;color:#555;">.evaluatelive.com</span>
-					</div>
-					<div id="restore-form">
-						<input id="rem-login" type="checkbox" name="rem" required > <span style="font-size: 12px; color:#333333; position: relative; top: -2px;">I agree with term and conditions</span>
-					</div>
-					<input id="login-btn" type="submit" value="Submit"/>
-					<div id="login-bottom">
-						<img src="img/mini-icon2.png" style="position:absolute; left:24%; bottom:30%;" alt="">
-						<p style="margin-top:2%;">*Your data will be secured with us</p>
-					</div>
-					
-				</form>	
-
+			<form id="reg-formRegister" class="reg-form">
+				<p id="login-headline">Free Sign Up</p>
+				<div class="form-group">
+					<input class="form1 noSpecialChars" id="reg-txtName" type="text" placeholder="Name" name="name" required maxlength="25">
+				</div>
+				<div class="form-group">
+					<input class="form2 regexp" type="text" id="reg-txtEmail" placeholder="Email" name="email" required maxlength="25">
+				</div>
+				<div class="form-group">
+					<input class="form2" id="reg-txtPassword" type="password" placeholder="Password" name="password" required maxlength="25">
+				</div>
+				<div class="form-group">
+					<input class="form2 noSpecialChars" id="reg-txtNumber" type="text" placeholder="Number" name="number" required maxlength="25">	
+				</div>
+				<div class="form-group">
+					<input class="form2 noSpecialChars" id="reg-txtOrgname" type="text" placeholder="Organisation name" name="orgname" required maxlength="25">					
+				</div>
+				<div class="form-group">
+					<input class="form3 noSpecialChars" id="reg-txtSubdomain" type="text" placeholder="Choose sub domain" name="subdomain" required maxlength="25">
+					<span style="font-size: 13px;font-family: Raleway;position:absolute;right:90px;top:13px;color:#555;">.evaluatelive.com</span>
+				</div>
+				<div id="restore-form">
+					<input id="reg-chkRule" type="checkbox" name="rem" required > <span style="font-size: 12px; color:#333333; position: relative;">I agree with term and conditions</span>
+				</div>
+				<input id="reg-btnSubmit" class="login-btn" type="submit" value="Submit"/>
+				<div id="login-bottom">
+					<img src="img/mini-icon2.png" style="position:absolute; left:24%; bottom:30%;" alt="">
+					<p style="margin-top:2%;">*Your data will be secured with us</p>
+				</div>					
+			</form>	
 	</section>
 	<footer>
 		<div class="row">
