@@ -359,13 +359,14 @@ table {
 	vertical-align: top;
 }
 .block ul li {
-	min-height: 35px;
+	height: 35px;
 	line-height: 35px;	
 	padding-left:20px;
 	color: #565656;
 	font-size:14px;
 	font-weight: 500;
 	cursor: pointer;
+	overflow: hidden;
 }
 .block ul li:not(:last-child) {
 	border-bottom: 1px solid #dadada;
@@ -464,13 +465,13 @@ table {
 	color: #666;
 	font-size: 12px;
 	float: right;
-	margin-right: 25px;
+	padding-right: 25px;
 	position: relative;
 }
 .block_current .state::after {
 	content: ''; 
 	position: absolute; /* Абсолютное позиционирование */
-	right: -25px;top: 21px;
+	right: 0px;top: 21px;
 	border: 7px solid transparent; /* Прозрачные границы */
 	border-top: 7px solid #565553; /* Добавляем треугольник */
 }
@@ -640,7 +641,7 @@ footer {
 	background:rgba(0,0,0,0.5);
  
  }
-  #reg-form {		
+.reg-form {
 	display: block;
 	position:absolute;
 	left:50%;
@@ -656,7 +657,7 @@ footer {
 	background-clip: padding-box;
 	
 }
- #login-form {		
+.plogin-form {
 	display: block;
 	position:absolute;
 	left:50%;
@@ -804,8 +805,19 @@ footer {
 	margin-left: 14%;
 	height: 40px;
 	margin-top:10px;
+	line-height: 14px;
+	position: relative;
 }
-	
+#restore-form input, #restore-form span{
+	vertical-align: middle;
+}
+#restore-form label {
+	position: absolute;
+	top: 25px;
+	font-size: 12px;
+	color: rgb(233, 15, 15);
+}
+
 #rest-pass{
 	display:block;
 	float:right;
@@ -819,7 +831,7 @@ footer {
 	text-decoration: underline;
 }
 
-#login-btn{
+.login-btn{
 	display:block;
 	width:45%;
 	height:11%;
@@ -837,7 +849,7 @@ footer {
 	
 }	
 
-#login-btn:hover{
+.login-btn:hover{
 	background:#da534f;
 }
 
@@ -933,7 +945,7 @@ h2.section_header a {
 	margin-top: -10px;
 }
 
-#login-btn:active{
+.login-btn:active{
 	background:linear-gradient(#428bca 50%, #3984c5 50%);
 	border-color:#397fba;
 	margin:15px auto;   		
@@ -965,6 +977,9 @@ h2.section_header a {
 #view_exam table i.fa-check-circle, #manage_staff table i.fa-check-circle{
 	color: #47a746;
 }
+#view_exam table i.fa-pencil , #manage_staff table i.fa-pencil {
+	margin-right: 5px;
+}
 #view_exam table th, #manage_staff table th {
 	text-align: left;
 	background: #f7f7f7;
@@ -985,7 +1000,7 @@ h2.section_header a {
 	 margin-right: 0;
 	 cursor: pointer;
 }
-#view_exam tbody td:last-child i:hover , #manage_staff tbody td i:last-child:hover, #view_exam tbody td:last-child span:hover , #manage_staff tbody td span:last-child:hover {
+#view_exam tbody td:last-child:hover , #manage_staff tbody td:last-child:hover {
 	color: #d9524c;
 	cursor: pointer;
 }
@@ -1113,6 +1128,13 @@ h2.section_header a {
 	border:none;
 	padding: 10px;
 	color: #555;
+	font-family: Raleway;
+	font-size: 13px;
+}
+.table-settings-exam input {
+	color: #555;
+	font-family: Raleway;
+	font-size: 13px;
 }
 .table-settings-exam tr td:first-child {
 	width:30%;
@@ -1169,6 +1191,7 @@ h2.section_header a {
 }
 .table-settings-exam .pull-right-10 {
 	float: right;
+	cursor: pointer;
 }
 .table-settings-exam tr:last-child td:last-child {
 	padding: 0;
@@ -1181,7 +1204,10 @@ h2.section_header a {
 	color: #757575;
 	font-size: 14px;
 	display: inline-block;
-	margin-right: 14%;
+}
+.grade_input {
+	width: 14%;
+	padding: 8px 0px;
 }
 .exam-btn {
 	margin-top:20px;
@@ -1350,7 +1376,7 @@ h2.section_header a {
 	margin: 7% 1.5% 0 0;	
 }
 
-#credits-text1{
+.credits-text1{
 	display: inline-block;
 	width: 33%;
 	margin-left: 5%;
@@ -1368,7 +1394,7 @@ h2.section_header a {
 	line-height:36px;
 	float:left;
 }
-#credits-text2{
+.credits-text2{
 	display: inline-block;
 	width: 33%;
 	margin-left: 5%;
@@ -1389,7 +1415,7 @@ h2.section_header a {
 
 }
 
-#credits-amount{
+.credits-amount{
 	display: inline-block;
 	float:left;
 	width: 52%;
@@ -1408,7 +1434,7 @@ h2.section_header a {
 
 }
 
-#credits-price{
+.credits-price{
 	display: inline-block;
 	float:left;
 	width: 52%;
@@ -1487,15 +1513,20 @@ h2.section_header a {
 #my_manage_profile {
 	display: none;
 }
-#delete_selected_profiles {
+#myStaff_btnDeleteSelected {
 	font-size: 14px;
 	padding: 5px 10px;
 	width: 130px;
 	line-height: 20px;
 }
-#create_profile {
+#createNewStaff-btnCreate {
 	font-size: 14px;
 	padding: 5px 10px;
 	width: 100px;
 	line-height: 20px;	
+}
+.right-column {
+	font-size: 13px;
+	color:#555;
+	font-family: Raleway;
 }

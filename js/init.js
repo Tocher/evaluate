@@ -170,7 +170,23 @@ $(document).ready(function() {
 	});
 
 //////	Tabs	//////
-    $("#left_column table").find("tr").first().addClass("selected");
+	$("#left_column table").find("tr").first().addClass("selected");
+	if($.cookie('tab') !== undefined) {
+		var tab = "#tab"+$("#left_column table tr.selected").data("tab");
+    	$(tab).hide();
+    	$("#left_column table tr.selected").removeClass("selected");
+    	
+    	var tab = $.cookie('tab');
+    	var cur_tab = $.cookie('tab_table');
+    	var l_tabs = $("#left_column table tr");
+    	for (var i = l_tabs.length - 1; i >= 0; i--) {
+    		if($(l_tabs[i]).data("tab") == cur_tab)
+    		{
+    			$(l_tabs[i]).addClass("selected");
+    		}
+    	};
+    	$(tab).show();
+	}
 
     $("#left_column table tr").click(function() {
     	var tab = "#tab"+$("#left_column table tr.selected").data("tab");
@@ -180,15 +196,21 @@ $(document).ready(function() {
     	$(this).addClass("selected");
     	var tab = "#tab"+$(this).data("tab");
     	$(tab).show();
+    	$.cookie('tab_table', $(this).data("tab"));
+    	$.cookie('tab', tab);
     });
 
 //////	Selections	//////
     var selected_course,selected_subject,selected_section;
     $(".list ul li").click(function() {
+    	course_manager_li($(this));
+    });
+
+    function course_manager_li(el) {
     	var unselect = false;
-    	if($(this).attr("class") === "selected")
+    	if($(el).attr("class") === "selected")
     		unselect = true;
-    	var prev = $(this).parent().find(".selected");
+    	var prev = $(el).parent().find(".selected");
     	var p = $(prev).prev();    	    		
     	if(p.length>0)
     	{
@@ -206,55 +228,62 @@ $(document).ready(function() {
 
     	if(unselect)
     	{
-    		$(this).parent().parent().parent().find('.block_current > span').click();    		
+    		$(el).parent().parent().parent().find('.block_current > span').click();    		
     		return;
     	}
 
-    	$(this).addClass("selected");
-    	$(this).parent().parent().parent().find('.remove').removeClass('disabled');
-    	if($(this).parent().attr('id') === "course-ul") {
-	    	$(this).find('span').html($(this).find('span').html()+'<i class="fa fa-check-circle"></i>');    
-    		selected_course = $(this);	
+    	$(el).addClass("selected");
+    	$(el).parent().parent().parent().find('.remove').removeClass('disabled');
+    	if($(el).parent().attr('id') === "course-ul") {
+	    	$(el).find('span').html($(el).find('span').html()+'<i class="fa fa-check-circle"></i>');    
+    		selected_course = $(el);	
     		$(".block-subject").fadeIn();
     		$(".block-subject").css('display','inline-block'); 
 	    }
-	    else if($(this).parent().attr('id') === "subject-ul") {
-	    	$(this).find('span').html($(this).find('span').html()+'<i class="fa fa-check-circle"></i>');    
-	    	selected_subject = $(this);	
+	    else if($(el).parent().attr('id') === "subject-ul") {
+	    	$(el).find('span').html($(el).find('span').html()+'<i class="fa fa-check-circle"></i>');    
+	    	selected_subject = $(el);	
 	    	$(".block-section").fadeIn();
 	    	$(".block-section").css('display','inline-block');
 	    }
-	    else if($(this).parent().attr('id') === "section-ul") {
-	    	$(this).find('i').attr('class','fa fa-check-circle');
-	    	selected_section = $(this);	
+	    else if($(el).parent().attr('id') === "section-ul") {
+	    	$(el).find('i').attr('class','fa fa-check-circle');
+	    	selected_section = $(el);	
 	    }
-	    $(this).parent().parent().parent().find('button').removeClass('disabled');
-	    var text = $(this).html();
+
+	    //Re init
+	    $(".list ul li").unbind('click');
+	    $(".list ul li").click(function() {
+	    	course_manager_li($(this));
+	    });
+
+	    $(el).parent().parent().parent().find('button').removeClass('disabled');
+	    var text = $(el).html();
 		var r = /<(\w+)[^>]*>.*<\/\1>/gi;
 		text = text.replace(r,"");
-	    $(this).parent().parent().parent().find('.course').val(text);
-	    text = $(this).find('span').html();
+	    $(el).parent().parent().parent().find('.course').val(text);
+	    text = $(el).find('span').html();
 	    if(text !== undefined)
 		{
 			text = text.replace(r,"");
-			$(this).parent().parent().parent().find('.state span').html(text);
+			$(el).parent().parent().parent().find('.state span').html(text);
 		}
 	    
-    	prev = $(this).prev();
+    	prev = $(el).prev();
     	if(prev.length>0)
     	{
     		$(prev[0]).css("border-bottom","none");
     	}
-			$(this).parent().parent().parent().find('.block_current > span').data('action','unselect');
-	    	$(this).parent().parent().parent().find('.block_current > span').html('-');
-			$(this).parent().parent().parent().find('.block_current > span').css("line-height", "25px");
-    });
+			$(el).parent().parent().parent().find('.block_current > span').data('action','unselect');
+	    	$(el).parent().parent().parent().find('.block_current > span').html('-');
+			$(el).parent().parent().parent().find('.block_current > span').css("line-height", "25px");
+    
+    }
 	
 ////// Sub menu (active/inactive)	//////
 	$('.sub li').click(function() {
 		var mark = $(this).data('mark');
-		var block = $(this).parent().parent().parent().parent().parent().find('.remove').data('ul');
-
+		var block = $(this).parent().parent().parent().parent().parent().find('.remove').data('ul');		
 		switch(block) {
     		case 'course-ul':
 		    	if(selected_course !== undefined)
@@ -293,6 +322,7 @@ $(document).ready(function() {
 		    	}
     		break;
     	}
+    	$(this).parent().parent().parent().find('.sub').fadeOut();
 	});
 	$('.state').click(function() {
 		$(this).find('.sub').show();	
@@ -481,7 +511,7 @@ $(document).ready(function() {
 		$(this).parent().find(".course").focus();
 
 		// adding msg
-		$(".column_head").html($(".column_head").html() + '<div class="column_state"><i class="fa fa-check-circle"></i>' + msg + '</div>');
+		$("#tab2 .column_head").html($("#tab2 .column_head").html() + '<div class="column_state"><i class="fa fa-check-circle"></i>' + msg + '</div>');
 		setTimeout(function() {
 			$(".column_state").fadeOut("slow",function() {
 			    $(this).remove();
@@ -617,12 +647,41 @@ $(document).ready(function() {
 		$("#view_exam_tab").fadeIn();
 	});
 
+	//Create New
+	$("#examCreate-btnCreate").click(function() {
+
+		var count = $("#view_exam tbody tr").size()+1;
+
+		var r = /<(\w+)[^>]*>.*<\/\1>/gi;
+		var c_name = $("#examCreate-txtCourseName").html().replace(r,"");
+		var c_subj = $("#examCreate-txtSubject").html().replace(r,"");
+		var c_qp = $("#examCreate-txtQuestionPaper").html().replace(r,"");
+		var c_batch = $("#examCreate-txtBatchName").html().replace(r,"");		
+		//$("#examCreate-txtExamSummary").val();
+
+		$("#view_exam tbody").append('<tr>'+
+										'<td><i class="fa fa-circle-thin"></i></td>'+
+										'<td>'+count+'</td>'+
+										'<td>'+$("#examCreate-txtExamName").val()+'</td>'+
+										'<td>'+c_qp+'</td>'+
+										'<td>'+c_batch+'</td>'+
+										'<td>40</td>'+
+										'<td>60 mins</td>'+
+										'<td>5</td>'+
+										'<td>5th Jul, 10:00</td>'+
+										'<td>10th Jul, 10:00</td>'+
+										'<td>80/100</td>'+
+										'<td><span>Edit</span> <i class="fa fa-pencil"></i></td>'+
+									'</tr>');
+
+		$("#create_exam_tab").hide();
+		$("#view_exam_tab").fadeIn();		
+	});
+
 var selected_exams = [];
 	// Remove row from exam view
-	$("#view_exam td:last-child i").click(function() {
-		$(this).parent().parent().fadeOut(function(e) {
-			e.remove();
-		});
+	$("#view_exam tbody td:last-child").click(function() {
+		//Edit TODO
 	});
 	$("#view_exam tbody tr").click(function() {
 		if($.inArray(this,selected_exams) === -1) {
@@ -632,6 +691,24 @@ var selected_exams = [];
 		else {			
 			$(this).find("td").first().find("i").removeClass("fa-check-circle").addClass("fa-circle-thin");
 			selected_exams.pop(this);
+		}
+	});
+
+	$("#view_exam_select_all").click(function() {
+		var all_exams = $("#view_exam tbody tr");
+		if($(this).hasClass("fa-circle-thin")) {
+			for (var i = all_exams.length - 1; i >= 0; i--) {
+				$(all_exams[i]).find("td").first().find("i").removeClass('fa-circle-thin').addClass("fa-check-circle");
+				selected_exams.push($(all_exams[i]));
+			};
+			$(this).removeClass("fa-circle-thin").addClass("fa-check-circle");
+		}
+		else {
+			for (var i = all_exams.length - 1; i >= 0; i--) {
+				$(all_exams[i]).find("td").first().find("i").removeClass("fa-check-circle").addClass("fa-circle-thin");
+				selected_exams.pop($(all_exams[i]));
+			};
+			$(this).removeClass("fa-check-circle").addClass("fa-circle-thin");
 		}
 	});
 
@@ -661,6 +738,53 @@ var selected_exams = [];
 	$("#exam_start_date").datepicker();
 	$("#exam_end_date").datepicker();
 
+	$("#ui-datepicker-div").wrap('<div class="ll-skin-latoja"></div>');
+	
+
+	$("#view_exam tbody tr:last-child").click(function() {
+		$("#view_exam_tab").hide();
+		$("#create_exam_tab").fadeIn();
+
+		var data = $(this).parent();
+	});
+
+	//Select Course
+	$(".selection_course_sub li").click(function() {		
+		$(this).parent().parent().find('span').html($(this).html() + '<i class="fa fa-caret-down"></i>');
+		$(".selection_course_sub").hide();
+	});
+
+	$(".selection_subject_sub li").click(function() {		
+		$(this).parent().parent().find('span').html($(this).html() + '<i class="fa fa-caret-down"></i>');
+		$(".selection_subject_sub").hide();
+	});	
+
+	$(".select li").click(function() {
+		$(this).parent().parent().find('ul').hide();
+		$(this).parent().parent().find('span').html($(this).html() + '<i class="fa fa-caret-down"></i>');
+	});
+
+	$(".grade_input").keyup(function(e) {
+		if(e.keyCode==8 || e.keyCode==9 || e.keyCode==13 || e.keyCode==46)
+			return;
+		if(e.keyCode >= 48 && e.keyCode <= 57) {
+			if($(this).val().length > 3)
+				$(this).val($(this).val().substr(0,3));
+		}
+		else
+			$(this).val($(this).val().substr(0,$(this).val().length-1));
+	});
+
+	$(".set_def_passing").click(function() {
+		$(this).parent().find('input').val(40);
+	});
+	$(".set_def_mpq").click(function() {
+		$(this).parent().find('input').val(1);
+	});
+	$(".set_def_nm").click(function() {
+		$(this).parent().find('input').val(0.25);
+	});
+
 ///////////////////// Credits JS ///////////////////////////
 	$("#switch_to_buy_credits").click(function() {
 		$(".purch-history-block").hide();
@@ -679,8 +803,8 @@ var selected_exams = [];
 
 	});
 
-	$("#credits-amount").keyup(function() {
-		$("#credits-price").html("Rs. " + $(this).val());
+	$(".credits-amount").keyup(function() {
+		$(".credits-price").html("Rs. " + $(this).val());
 	});
 
 ///////////////////// myprofile JS ///////////////////////////
@@ -703,7 +827,7 @@ var selected_exams = [];
 	});
 
 	// Manage Staff Edit Button
-	$(".profile_edit").click(function() {
+	$("#manage_staff td:last-child").click(function() {
 		var el = $(this).parent().parent();
 
 		$("#my_manage_staff").hide();
@@ -716,24 +840,24 @@ var selected_exams = [];
 			if(i==2)
 			{
 				var name = $(vals[i]).html().split(" ");
-				$("#administrator_details_first_name").val(name[0]);
-				$("#administrator_details_last_name").val(name[1]);				
+				$("#admDetails-txtFirstName").val(name[0]);
+				$("#admDetails-txtLastName").val(name[1]);				
 			}
 			if(i==3)			
-				$("#administrator_details_email").val($(vals[i]).html());
+				$("#admDetails-txtEmail").val($(vals[i]).html());
 			if(i==4)
-				$("#administrator_details_mobile").val($(vals[i]).html());
+				$("#admDetails-txtMobile").val($(vals[i]).html());
 		};		
 
 	});
 
 	// Manage Staff Create Button
-	$("#create_profile").click(function() {
+	$("#createNewStaff-btnCreate").click(function() {
 
-		var fname = $("#create_profile_first_name").val();
-		var lname = $("#create_profile_last_name").val();
-		var email = $("#create_profile_email_name").val();
-		var mobile = $("#create_profile_mobile_name").val();
+		var fname = $("#createNewStaff-txtFirstName").val();
+		var lname = $("#createNewStaff-txtLastName").val();
+		var email = $("#createNewStaff-txtEmail").val();
+		var mobile = $("#createNewStaff-txtMobile").val();
 		var id = $("#manage_staff tbody tr").size()+1;	
 		
 		$("#manage_staff tbody").append('<tr>'+
@@ -742,27 +866,53 @@ var selected_exams = [];
 			'<td>'+fname+' '+lname+'</td>'+
 			'<td>'+email+'</td>'+
 			'<td style="font-family:arial;">'+mobile+'</td>'+
-			'<td><span class="profile_edit">Edit</span> <i class="fa fa-times-circle"></i></td>'+
+			'<td><span class="profile_edit">Edit</span> <i class="fa fa-pencil"></i></td>'+
 		'</tr>');		
 
-		$("#create_profile_first_name").val("");
-		$("#create_profile_last_name").val("");
-		$("#create_profile_email_name").val("");
-		$("#create_profile_mobile_name").val("");
-	});
+		$("#createNewStaff-txtFirstName").val("");
+		$("#createNewStaff-txtLastName").val("");
+		$("#createNewStaff-txtEmail").val("");
+		$("#createNewStaff-txtMobile").val("");
 
-
-
-////////////////////////// myprofile js //////////////////////
-
-
-var selected_profiles = [];
-	// Remove row from exam view
-	$("#manage_staff td:last-child i").click(function() {
-		$(this).parent().parent().fadeOut(function(e) {
-			e.remove();
+		//Re init
+		$("#manage_staff tbody tr").click(function() {
+			if($.inArray(this,selected_profiles) === -1) {
+				$(this).find("td").first().find("i").removeClass("fa-circle-thin").addClass("fa-check-circle");
+				selected_profiles.push(this);
+			}
+			else {			
+				$(this).find("td").first().find("i").removeClass("fa-check-circle").addClass("fa-circle-thin");
+				selected_profiles.pop(this);
+			}
 		});
+		$("#manage_staff td:last-child").click(function() {
+			var el = $(this).parent().parent();
+
+			$("#my_manage_staff").hide();
+			$("#my_manage_profile").fadeIn();
+			$(this).addClass("selected");		
+			$("#switch_to_manage_staff").removeClass("selected");
+
+			var vals = el.find('td');
+			for (var i = 0; i < vals.length; i++) {
+				if(i==2)
+				{
+					var name = $(vals[i]).html().split(" ");
+					$("#admDetails-txtFirstName").val(name[0]);
+					$("#admDetails-txtLastName").val(name[1]);				
+				}
+				if(i==3)			
+					$("#admDetails-txtEmail").val($(vals[i]).html());
+				if(i==4)
+					$("#admDetails-txtMobile").val($(vals[i]).html());
+			};		
+
+		});
+		//Re init End
 	});
+
+
+var selected_profiles = [];	
 	$("#manage_staff tbody tr").click(function() {
 		if($.inArray(this,selected_profiles) === -1) {
 			$(this).find("td").first().find("i").removeClass("fa-circle-thin").addClass("fa-check-circle");
@@ -775,7 +925,7 @@ var selected_profiles = [];
 	});
 
 	//Remove Selected Profiles
-	$("#delete_selected_profiles").click(function() {
+	$("#myStaff_btnDeleteSelected").click(function() {
 		if(selected_profiles.length == 0)
 			return;
 		for (var i = selected_profiles.length - 1; i >= 0; i--) {
@@ -787,8 +937,26 @@ var selected_profiles = [];
 		selected_profiles = [];
 	});
 
+	$("#myStaff-btnSelectAll").click(function() {
+		var all_staff = $("#manage_staff tbody tr");
+		if($(this).hasClass("fa-circle-thin")) {
+			for (var i = all_staff.length - 1; i >= 0; i--) {
+				$(all_staff[i]).find("td").first().find("i").removeClass('fa-circle-thin').addClass("fa-check-circle");
+				selected_profiles.push($(all_staff[i]));
+			};
+			$(this).removeClass("fa-circle-thin").addClass("fa-check-circle");
+		}
+		else {
+			for (var i = all_staff.length - 1; i >= 0; i--) {
+				$(all_staff[i]).find("td").first().find("i").removeClass("fa-check-circle").addClass("fa-circle-thin");
+				selected_profiles.pop($(all_staff[i]));
+			};
+			$(this).removeClass("fa-check-circle").addClass("fa-circle-thin");
+		}
+	});
+
 	//Update Profile
-	$("#update_manage_profile").click(function() {
+	$("#profile-btnUpdate").click(function() {
 
 	});
 

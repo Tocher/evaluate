@@ -22,9 +22,14 @@
 }
 #create-new-staff table {
 	font-size: 13px;
+	border-radius: 5px;
 }
 #create-new-staff table input {
 	border: 0;
+	padding: 10px;
+	font-size: 13px;
+	color:#555;
+	font-family: Raleway;
 }
 #my_manage_profile table {
 	border-radius: 5px;
@@ -32,7 +37,8 @@
 #my_manage_profile table input, #my_manage_profile table textarea {
 	border: 0;
 	font-family: 'Raleway', sans-serif;
-	padding: 5px;
+	padding: 10px;
+	font-size: 13px;
 }
 
 #create-new-staff  h3{
@@ -63,7 +69,7 @@
 }
 
 #administrator_details, #institute_details, #change_pass{
-	min-width: 350px;
+	min-height: 350px;
 }
 #administrator_details{
 	width:29%;
@@ -114,7 +120,7 @@
 .profile_edit:hover {
 	color: #d9524c;
 }
-#update_manage_profile {
+#profile-btnUpdate {
 	margin-bottom: 20px;
 	padding: 5px;
 	width: 100px;
